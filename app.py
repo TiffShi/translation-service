@@ -6,7 +6,7 @@ from contextlib import asynccontextmanager
 import redis
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
-from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import pipeline
 import logging
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -19,8 +19,6 @@ logger = logging.getLogger(__name__)
 class TranslationRequest(BaseModel):
     text: str = Field(..., min_length=1, description="The text to be translated")
     target_language: str = Field(..., min_length=1, description="The full name of the target language")
-    model_alias: str = Field("helsinki", description="The alias of the model to use. Options: 'helsinki', 'small100'.")
-#defines the structure for the response when a job is successfully submitted
 
 class JobResponse(BaseModel):
     message: str
@@ -31,21 +29,7 @@ class Result(BaseModel):
     status: str
     result: str | None = None #string could be None is still proccessing
 
-# --- Model Configuration ---
-SUPPORTED_MODELS = {
-    "helsinki": {
-        "name_template": "Helsinki-NLP/opus-mt-en-{lang_code}",
-        "task": "translation",
-        "requires_lang_code": True
-    },
-    "small100": {
-        "name_template": "alirezamsh/small100",
-        "task": "translation",
-        "requires_lang_code": True,
-        "is_m2m": True #special flag for this distilled multilingual model
-    }
-}
-
+HELSINKI_NAME_TEMPLATE = "Helsinki-NLP/opus-mt-en-{lang_code}"
 #mapping full language names to the required 2-letter codes
 LANGUAGE_CODES = {
     "french": "fr",
@@ -62,43 +46,24 @@ model_cache = {}
 model_cache_lock = Lock()
 
 #function loads a specific translation model
-def get_translation_pipeline(model_alias: str, target_language: str):
-    if model_alias not in SUPPORTED_MODELS:
-        return None, f"Model alias: '{model_alias}' not supported."
-
-    model_config = SUPPORTED_MODELS[model_alias]
-    model_name = model_config["name_template"]
+def get_translation_pipeline(target_language: str):
     lang_code = LANGUAGE_CODES.get(target_language.lower())
 
-    if model_config["requires_lang_code"] and not lang_code:
-        return None, f"Language '{target_language}' not supported for this model"
+    if not lang_code:
+        return None, f"Language '{target_language}' not supported."
 
-    #dynamically create the full model name if needed
-    if model_alias == "helsinki":
-        model_name = model_name.format(lang_code=lang_code)
-
+    model_name = HELSINKI_NAME_TEMPLATE.format(lang_code=lang_code)
     cache_key = model_name
 
     with model_cache_lock:
         if cache_key in model_cache:
             return model_cache[cache_key], None
 
-        #For now we construct model name based on Helsinki-NLP naming convention
-        #assumes we are always translating from english
-        #model_name = f"Helsinki-NLP/optus-mt-en-{target_language}"
-        #print(f"Loading model: {model_name}...")
-
         logger.info(f"Loading model for cache key: {cache_key}...")
         try:
-            if model_config.get("is_m2m"):
-                tokenizer = AutoTokenizer.from_pretrained(model_name)
-                model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
-                tokenizer.src_lang = "en"
-                translator = pipeline('translation', model=model, tokenizer=tokenizer)
-            else:
-                translator = pipeline(model_config["task"], model=model_name)
+            translator = pipeline('translation', model=model_name)
 
-            model_cache[cache_key] = translator
+            model_cache[cache_key] = translator 
             logger.info(f"Model {cache_key} loaded and cached successfully")
             return translator, None
         #keep for now, but might not be needed later -> negative cacheing
@@ -142,21 +107,10 @@ def translation_worker():
         task_id = task['id']
         result_key = f"{RESULTS_CACHE_PREFIX}{task_id}"
         try:
-            translator_pipeline, error = get_translation_pipeline(task['model_alias'], task['lang'])
+            translator_pipeline, error = get_translation_pipeline(task['lang'])
 
             if translator_pipeline:
-                #small100 model requires target language code to be passed in during the call
-                if task['model_alias'] == 'small100':
-                    lang_code = LANGUAGE_CODES.get(task['lang'].lower())
-                    if lang_code:
-                        logger.info(f"Translating with small100 to lang_code: {lang_code}")
-                        result = translator_pipeline(task['text'], src_lang="en", tgt_lang=lang_code)
-                    else:
-                        translated_text = f"Language '{task['lang']}' is not supported by the small1000 model in this app"
-                        status = 'failed'
-                else:
-                    result = translator_pipeline(task['text'])
-
+                result = translator_pipeline(task['text'])
                 translated_text = result[0]['translation_text']
                 status = 'completed'
             else:
@@ -200,8 +154,7 @@ app = FastAPI(
 async def submit_translation(translation_request: TranslationRequest):
     if not redis_client:
         raise HTTPException(status_code=503, detail="Service Unavailable: Cannot Connect to Redis.")
-    if translation_request.model_alias not in SUPPORTED_MODELS:
-        raise HTTPException(status_code=400, detail=f"Model alias '{translation_request.model_alias}' is not supported.")
+    
     #generate unique ID for this specific request
     request_id = str(uuid.uuid4())
 
@@ -210,7 +163,6 @@ async def submit_translation(translation_request: TranslationRequest):
         'id': request_id,
         'text': translation_request.text,
         'lang': translation_request.target_language,
-        'model_alias': translation_request.model_alias
      }
 
     result_key = f"{RESULTS_CACHE_PREFIX}{request_id}"
