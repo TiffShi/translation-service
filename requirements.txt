@@ -1,0 +1,9 @@
+fastapi
+pydantic
+gunicorn
+uvicorn
+redis
+transformers
+sentencepiece
+torch
+sacremoses
