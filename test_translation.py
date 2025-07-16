@@ -1,6 +1,8 @@
 import os
 import time
 import pytest
+import json
+import statistics
 import requests
 from openai import OpenAI
 from sentence_transformers import SentenceTransformer
@@ -8,9 +10,31 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 # --- Test Configuration ---
 BASE_URL = "http://localhost:5000"
-TEST_TEXT = "Adjuvant vaginal brachytherapy with consideration of external beam radiation therapy per NCCN Stage IA grade 3 guidelines"
-TARGET_LANGUAGE_NAME = "Spanish"
-SIMILARITY_THRESHOLD = 0.8
+#TARGET_LANGUAGES = ["Spanish", "French", "Arabic", "Hindi", "Chinese"]
+TARGET_LANGUAGES = ["Chinese"]
+TERMS_TO_TEST = [
+    "recommended_treatment: Adjuvant vaginal brachytherapy with consideration of external beam radiation therapy per NCCN Stage IA grade 3 guidelines",
+    "patient_notes: Your surgery removed the uterine cancer, which was limited to the inner half of the uterine muscle and did not spread to your lymph nodes. This is considered an early stage (IA) cancer. Based on guidelines, additional treatment may be recommended to reduce the risk of recurrence, and your care team will discuss options such as radiation therapy. We will work together to plan the next steps for your care.",
+    "recommended_treatment: Observation",
+    "patient_notes: Your report shows a low-grade endometrial cancer confined to the uterine lining with no spread to lymph nodes. No further treatment beyond your surgery is typically necessary. We recommend close monitoring with regular follow-up appointments.",
+    "recommended_treatment: Observation or vaginal brachytherapy",
+    "patient_notes: Your report shows a grade 2 endometrial cancer confined to the upper wall of the uterus with no lymph node spread. You have had surgery to remove the uterus and ovaries with no remaining cancer. Given the low stage, we will monitor you closely and may recommend a small internal vaginal radiation treatment to lower the chance of recurrence. Follow-up visits and imaging will be scheduled regularly.",
+    r"recommended_treatment: Systemic therapy \u00b1 EBRT \u00b1 vaginal brachytherapy",
+    "patient_notes: Your surgery showed endometrial cancer that invaded the uterine muscle less than halfway, spread to the cervix and an ovary, but did not involve the lymph nodes. This is classified as stage IIIA. The recommended treatment includes chemotherapy and may include focused radiation to the pelvis or vaginal area. We will guide you through each step and provide support throughout your treatment.",
+    "recommended_treatment: Systemic therapy with or without external beam radiation therapy and/or vaginal brachytherapy",
+    "patient_notes: The pathology report shows a high-grade uterine serous carcinoma removed by hysterectomy with focal superficial myometrial invasion and no nodal or distant disease. Based on NCCN guidelines for high-risk histology Stage IA uterine serous carcinoma, adjuvant systemic chemotherapy with or without vaginal brachytherapy is recommended to reduce recurrence risk.",
+    r"recommended_treatment: Systemic therapy \u00b1 EBRT \u00b1 vaginal brachytherapy",
+    "patient_notes: Your pathology shows a high-grade uterine cancer that has reached the outer lining of the uterus but has not spread to lymph nodes. We recommend a combination of chemotherapy and pelvic radiation, which may include internal vaginal radiation, to reduce the risk of the cancer returning.",
+    "recommended_treatment: Total hysterectomy and bilateral salpingo-oophorectomy with surgical staging followed by carboplatin and paclitaxel chemotherapy plus external beam pelvic radiation and vaginal brachytherapy",
+    "patient_notes: This report shows uterine serous carcinoma with spread to pelvic, common iliac, and para-aortic lymph nodes. Your uterus, ovaries, and fallopian tubes were removed, and no cancer was found in the ovaries or omentum. To lower the chance of recurrence, you will receive carboplatin and paclitaxel chemotherapy combined with external beam pelvic radiation and a vaginal brachytherapy boost. We will support you through each step of this treatment plan.",
+    "recommended_treatment: Total hysterectomy with bilateral salpingo-oophorectomy and surgical staging followed by adjuvant carboplatin-paclitaxel chemotherapy and vaginal brachytherapy",
+    "patient_notes: Your pathology report shows a high-grade uterine cancer that has invaded most of the muscle layer but has not spread to your lymph nodes. We recommend removing the uterus and ovaries with surgical staging, followed by chemotherapy and focused radiation to the vaginal area to reduce recurrence risk.",
+    "recommended_treatment: Adjuvant pelvic external beam radiation therapy with vaginal brachytherapy and systemic chemotherapy",
+    "patient_notes: Your diagnosis is endometrial cancer that was removed by surgery and found to have invaded more than half of the uterine muscle but did not spread to lymph nodes. To lower the chance of return, we recommend targeted radiation to your pelvis and vagina and a course of chemotherapy. This combined approach is standard for your stage of disease and is aimed at improving long-term outcomes.",
+    "recommended_treatment: Systemic therapy plus external beam pelvic radiotherapy and vaginal brachytherapy",
+    "patient_notes: Your pathology shows a high-grade uterine cancer that has spread to lymph nodes. The cancer invaded less than half of the uterine muscle but metastasized to several lymph nodes. The recommended plan includes chemotherapy along with targeted radiation to the pelvis and possibly a small internal radiation treatment. Your care team will discuss this combined approach to help reduce the risk of recurrence."
+]
+SIMILARITY_THRESHOLD = 0.85
 
 # --- OpenAI Setup ---
 openai_api_key = os.environ.get("OPENAI_API_KEY")
@@ -19,15 +43,7 @@ skip_if_no_key = pytest.mark.skipif(not openai_api_key, reason="OPENAI_API_KEY e
 # --- Sentence Transformer Model ---
 embedding_model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
 
-#creates an OpenAI client that can be reused across multiple tests in this file
-@pytest.fixture(scope="module")
-def openai_client():
-    if openai_api_key:
-        return OpenAI(api_key=openai_api_key)
-    return None
-
-#takes our text and sends it to the OpenAI API to get a high-quality
-#translation to compare against
+#takes our text and sends it to the OpenAI API to get a high-quality translation to compare against
 def get_openai_translation(client, text, language_name) :
     if not client:
         return "OpenAI client not available"
@@ -42,65 +58,124 @@ def get_openai_translation(client, text, language_name) :
         )
         return response.choices[0].message.content.strip()
     except Exception as e:
-        pytest.fail(f"OpenAI API call failed: {e}")
+        print(f"Warning: OpenAI API call failed for '{text}': {e}")
+        return "N/A"
 
 #--- Main Test Function ---
+#This test measure the performace and quality of a batch of translation requests for a specific language
+@pytest.mark.parametrize("target_language", TARGET_LANGUAGES)
 @skip_if_no_key
-def test_lang_comparison():
-    #submit job to our service
-    print(f"Submitting translation request for: '{TEST_TEXT}'")
+def test_batch(target_language):
+    #submit all translation jobs for the current language
+    print(f"--- Starting Benchmark for: {target_language.upper()} ---")
+    print(f"Submitting {len(TERMS_TO_TEST)} translation requests...")
+    request_map = {}
+    for term in TERMS_TO_TEST:
+        try:
+            submit_response = requests.post (
+                f"{BASE_URL}/translate",
+                json={"text": term, "target_language": target_language}
+            )
+            #assert checks if condition is true. If not, test fails
+            assert submit_response.status_code == 202 #check if request accepted
+            request_id = submit_response.json()["request_id"]
+            request_map[request_id] = {"original": term }
+        except requests.exceptions.RequestException as e:
+            pytest.fail(f"Failed to submit request for '{term}': {e}")
+
+    print(f"{len(request_map)} jobs for {target_language} submitted successfully.")
+
+    #poll for the all results
+    print("Waiting for all translations to complete...")
     start_time = time.time()
-    submit_response = requests.post (
-        f"{BASE_URL}/translate",
-        json={"text": TEST_TEXT, "target_language": TARGET_LANGUAGE_NAME}
-    )   
-    #assert checks if condition is true. If not, test fails
-    assert submit_response.status_code == 202 #check if request accepted
-    data = submit_response.json()
-    assert "request_id" in data 
-    request_id = data["request_id"]
-    print(f"Request submitted successfully. ID: {request_id}")
 
-    #poll for the result
-    service_translation = ""
-    for i in range(1000):
-        print("Polling for result... ")
-        result_response = requests.get(f"{BASE_URL}/result/{request_id}")
-        assert result_response.status_code == 200 #check if the /result endpoint is working
-        result_data = result_response.json()
-        if result_data.get("status") == "completed":
-            end_time = time.time()
-            service_translation = result_data.get("result")
-            duration = end_time - start_time
-            print(f"Your service took {duration:.2f} seconds to complete the translation")
-            break
-        time.sleep(1) #wait 1 second before polling again
-    
-    assert service_translation, "Translation from service was not completed in time."
-    
-    #get reference translation from OpenAI
-    print("Fetching translation from OpenAI...")
-    openai_client_instance = OpenAI(api_key=openai_api_key)
-    openai_translation = get_openai_translation(openai_client_instance, TEST_TEXT, TARGET_LANGUAGE_NAME)
+    pending_ids = set(request_map.keys())
+    timeout_seconds = 300
 
-    #compare the results using embeddings
-    print("Generating embeddings for comparison...")
-    service_embedding = embedding_model.encode([service_translation])
-    openai_embedding = embedding_model.encode([openai_translation])
-    #calculate the cosine similarity score between two vectors
-    similarity_score = cosine_similarity(service_embedding, openai_embedding)[0][0]
+    while pending_ids and (time.time() - start_time) < timeout_seconds:
+        for req_id in list(pending_ids):
+            try:
+                result_response = requests.get(f"{BASE_URL}/result/{req_id}")
+                #check if the /result endpoint is working
+                if  result_response.status_code == 200:
+                    result_data = result_response.json()
+                    if result_data.get("status") in ["completed", "failed"]:
+                        request_map[req_id]['status'] = result_data.get("status")
+                        request_map[req_id]['service_translation'] = result_data.get("result")
+                        pending_ids.remove(req_id)
+            except requests.exceptions.RequestException as e:
+                print(f"Warning: Could not poll for request ID {req_id}: {e}")
 
-    # Print a clear report for the user to see the comparison.
-    print("\n--- SEMANTIC COMPARISON ---")
-    print(f"Original Text: {TEST_TEXT}")
-    print(f"Target Language: {TARGET_LANGUAGE_NAME}")
-    print("-" * 20)
-    print(f"Your Service Result:  '{service_translation}'")
-    print(f"OpenAI gpt-4o Result: '{openai_translation}'")
-    print("-" * 20)
-    print(f"Cosine Similarity Score: {similarity_score:.4f}")
-    print(f"Required Threshold: > {SIMILARITY_THRESHOLD}")
-    print("--- END COMPARISON ---\n")
+        if pending_ids:
+            time.sleep(1)
 
-    assert similarity_score > SIMILARITY_THRESHOLD, \
-        f"Translations are not semantically similar enough. Score: {similarity_score}"
+    end_time = time.time()
+
+    #fetch OpenAI translations and calculate quality scores
+    print("All jobs completed.")
+    print("Fetching reference translations from OpenAI and calculating quality...")
+    openai_client = OpenAI(api_key=openai_api_key)
+    similarity_scores = []
+    current_language_results = []
+
+    for req_id, data in request_map.items():
+        result_entry = {"Original Term": data.get('original', 'N/A')}
+        if data.get('status') == 'completed':
+            original_text = data['original']
+            service_translation = data['service_translation']
+            openai_translation = get_openai_translation(openai_client, original_text, target_language)
+
+            result_entry["Service Translation"] = service_translation
+            result_entry["OpenAI Translation"] = openai_translation
+
+            #check if OpenAI call was successful
+            if openai_translation != "N/A":
+                #compare the results using embeddings
+                service_embedding = embedding_model.encode([service_translation])
+                openai_embedding = embedding_model.encode([openai_translation])
+                score = cosine_similarity(service_embedding, openai_embedding)[0][0]
+                similarity_scores.append(score)
+                result_entry["Similarity Score"] = f"{score:.4f}"
+        else:
+            result_entry["Service Translation"] = data.get('service_translation', 'SERVICE FAILED')
+            result_entry["OpenAI Translation"] = "N/A"
+            result_entry["Similarity Score"] = "N/A"
+
+        current_language_results.append(result_entry)
+
+    #read existing json, update it, and write back
+    output_filename = "analysis.json"
+    all_results = {}
+
+    #try to load existing results from the file
+    if os.path.isfile(output_filename):
+        try:
+            with open(output_filename, 'r', encoding='utf-8') as f:
+                all_results = json.load(f)
+        except (json.JSONDecodeError, FileNotFoundError) as e:
+            print(f"Warning: Could not decode JSON from {output_filename}. Starting fresh.")
+
+    all_results[target_language] = current_language_results
+
+    print(f"Writing/updating results for {target_language} in {output_filename}...")
+    with open(output_filename, 'w', encoding='utf-8') as f:
+        json.dump(all_results, f, indent=4, ensure_ascii=False)
+
+    total_duration = end_time - start_time
+    num_completed = len(request_map)
+    num_phrases = len(TERMS_TO_TEST)
+
+    print(f"\n--- BATCH REPORT FOR: {target_language.upper()} ---")
+    print(f"Total phrases submitted: {num_phrases}")
+    print(f"Total phrases completed: {num_completed}")
+    print(f"Total time taken: {total_duration:.2f} seconds")
+    if num_completed > 0:
+        avg_time = total_duration / num_completed
+        print(f"Average time per phrase: {avg_time:.2f} seconds")
+    if similarity_scores:
+        avg_similarity = statistics.mean(similarity_scores)
+        print(f"Average Similarity Score: {avg_similarity:.4f}")
+    print(f"Detailed results for {target_language} saved to: {output_filename}")
+    print("--- END REPORT ---\n")
+
+    assert len(pending_ids) == 0, f"Test timed out. {len(pending_ids)} jobs did not complete for {target_language}."

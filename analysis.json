@@ -1,0 +1,612 @@
+{
+    "Spanish": [
+        {
+            "Original Term": "recommended_treatment: Adjuvant vaginal brachytherapy with consideration of external beam radiation therapy per NCCN Stage IA grade 3 guidelines",
+            "Service Translation": "Recomendado_tratamiento: Braquiterapia vaginal adyuvante con consideración de radioterapia de haz externo por NCCN Estadio IA guía de grado 3",
+            "OpenAI Translation": "tratamiento_recomendado: Braquiterapia vaginal adyuvante con consideración de radioterapia de haz externo según las pautas de la NCCN para el estadio IA grado 3.",
+            "Similarity Score": "0.9659"
+        },
+        {
+            "Original Term": "patient_notes: Your surgery removed the uterine cancer, which was limited to the inner half of the uterine muscle and did not spread to your lymph nodes. This is considered an early stage (IA) cancer. Based on guidelines, additional treatment may be recommended to reduce the risk of recurrence, and your care team will discuss options such as radiation therapy. We will work together to plan the next steps for your care.",
+            "Service Translation": "patient_notes: Su cirugía eliminó el cáncer uterino, que se limitaba a la mitad interna del músculo uterino y no se diseminó a los ganglios linfáticos. Esto se considera un cáncer en estadio temprano (IA). Según las directrices, se puede recomendar un tratamiento adicional para reducir el riesgo de recurrencia, y su equipo de atención discutirá opciones como la radioterapia. Trabajaremos juntos para planificar los próximos pasos para su atención.",
+            "OpenAI Translation": "notas del paciente: Su cirugía eliminó el cáncer de útero, que estaba limitado a la mitad interna del músculo uterino y no se extendió a sus ganglios linfáticos. Esto se considera un cáncer en etapa temprana (IA). Según las pautas, se puede recomendar un tratamiento adicional para reducir el riesgo de recurrencia, y su equipo de atención discutirá opciones como la radioterapia. Trabajaremos juntos para planificar los próximos pasos para su cuidado.",
+            "Similarity Score": "0.9673"
+        },
+        {
+            "Original Term": "recommended_treatment: Observation",
+            "Service Translation": "_tratamiento recomendado: Observación",
+            "OpenAI Translation": "tratamiento_recomendado: Observación",
+            "Similarity Score": "0.7349"
+        },
+        {
+            "Original Term": "patient_notes: Your report shows a low-grade endometrial cancer confined to the uterine lining with no spread to lymph nodes. No further treatment beyond your surgery is typically necessary. We recommend close monitoring with regular follow-up appointments.",
+            "Service Translation": "patient_notes: Su informe muestra un cáncer de endometrio de bajo grado confinado al revestimiento uterino sin diseminación a los ganglios linfáticos. Típicamente no es necesario ningún tratamiento más allá de la cirugía. Recomendamos una monitorización estrecha con consultas regulares de seguimiento.",
+            "OpenAI Translation": "notas del paciente: Su informe muestra un cáncer endometrial de bajo grado confinado al revestimiento uterino sin propagación a los ganglios linfáticos. Normalmente, no es necesario ningún tratamiento adicional más allá de su cirugía. Recomendamos un monitoreo cercano con citas de seguimiento regulares.",
+            "Similarity Score": "0.9749"
+        },
+        {
+            "Original Term": "recommended_treatment: Observation or vaginal brachytherapy",
+            "Service Translation": "Recomendado_tratamiento: Observación o braquiterapia vaginal",
+            "OpenAI Translation": "tratamiento_recomendado: Observación o braquiterapia vaginal",
+            "Similarity Score": "0.9611"
+        },
+        {
+            "Original Term": "patient_notes: Your report shows a grade 2 endometrial cancer confined to the upper wall of the uterus with no lymph node spread. You have had surgery to remove the uterus and ovaries with no remaining cancer. Given the low stage, we will monitor you closely and may recommend a small internal vaginal radiation treatment to lower the chance of recurrence. Follow-up visits and imaging will be scheduled regularly.",
+            "Service Translation": "patient_notes: Su informe muestra un cáncer de endometrio de grado 2 confinado a la pared superior del útero sin diseminación de ganglios linfáticos. Usted ha sido sometido a una cirugía para extirpar el útero y los ovarios sin cáncer restante. Dado el estadio bajo, lo vigilaremos de cerca y le recomendaremos un pequeño tratamiento de radiación vaginal interna para reducir la probabilidad de recurrencia. Las visitas de seguimiento y las imágenes se programarán regularmente.",
+            "OpenAI Translation": "notas del paciente: Su informe muestra un cáncer endometrial de grado 2 confinado a la pared superior del útero sin diseminación a los ganglios linfáticos. Se ha sometido a una cirugía para extirpar el útero y los ovarios sin que quede cáncer. Dado el bajo estadio, lo monitorearemos de cerca y es posible que recomendemos un pequeño tratamiento de radiación vaginal interna para reducir la posibilidad de recurrencia. Las visitas de seguimiento y las pruebas de imagen se programarán regularmente.",
+            "Similarity Score": "0.9850"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy \\u00b1 EBRT \\u00b1 vaginal brachytherapy",
+            "Service Translation": "tratamiento recomendado: terapia sistémica \\u00b1 EBRT \\u00b1 braquiterapia vaginal",
+            "OpenAI Translation": "tratamiento_recomendado: Terapia sistémica \\u00b1 EBRT \\u00b1 braquiterapia vaginal",
+            "Similarity Score": "0.9481"
+        },
+        {
+            "Original Term": "patient_notes: Your surgery showed endometrial cancer that invaded the uterine muscle less than halfway, spread to the cervix and an ovary, but did not involve the lymph nodes. This is classified as stage IIIA. The recommended treatment includes chemotherapy and may include focused radiation to the pelvis or vaginal area. We will guide you through each step and provide support throughout your treatment.",
+            "Service Translation": "patient_notes: Su cirugía mostró cáncer de endometrio que invadió el músculo uterino a menos de la mitad, se diseminó hasta el cuello uterino y un ovario, pero no involucró los ganglios linfáticos. Esto se clasifica como estadio IIIA. El tratamiento recomendado incluye quimioterapia y puede incluir radiación focalizada a la pelvis o área vaginal. Le guiaremos a través de cada paso y le brindaremos apoyo durante todo el tratamiento.",
+            "OpenAI Translation": "notas del paciente: Su cirugía mostró cáncer de endometrio que invadió el músculo uterino en menos de la mitad, se extendió al cuello uterino y a un ovario, pero no afectó a los ganglios linfáticos. Esto se clasifica como etapa IIIA. El tratamiento recomendado incluye quimioterapia y puede incluir radiación focalizada en la pelvis o el área vaginal. Lo guiaremos en cada paso y le brindaremos apoyo durante todo su tratamiento.",
+            "Similarity Score": "0.9835"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy with or without external beam radiation therapy and/or vaginal brachytherapy",
+            "Service Translation": "Recomendado_tratamiento: Terapia sistémica con o sin radioterapia de haz externo y/o braquiterapia vaginal",
+            "OpenAI Translation": "tratamiento_recomendado: Terapia sistémica con o sin radioterapia de haz externo y/o braquiterapia vaginal",
+            "Similarity Score": "0.9716"
+        },
+        {
+            "Original Term": "patient_notes: The pathology report shows a high-grade uterine serous carcinoma removed by hysterectomy with focal superficial myometrial invasion and no nodal or distant disease. Based on NCCN guidelines for high-risk histology Stage IA uterine serous carcinoma, adjuvant systemic chemotherapy with or without vaginal brachytherapy is recommended to reduce recurrence risk.",
+            "Service Translation": "patient_notes: El informe patológico muestra un carcinoma seroso uterino de alto grado extirpado por histerectomía con invasión miometrial superficial focal y ninguna enfermedad ganglionar o distante.Con base en las guías de NCCN para histología de alto riesgo Carcinoma seroso uterino en estadio IA, se recomienda quimioterapia sistémica adyuvante con braquiterapia vaginal o sin ella para reducir el riesgo de recurrencia.",
+            "OpenAI Translation": "notas del paciente: El informe de patología muestra un carcinoma seroso uterino de alto grado extirpado mediante histerectomía con invasión focal superficial del miometrio y sin enfermedad nodal o a distancia. Según las guías de la NCCN para carcinoma seroso uterino de histología de alto riesgo en Etapa IA, se recomienda quimioterapia sistémica adyuvante con o sin braquiterapia vaginal para reducir el riesgo de recurrencia.",
+            "Similarity Score": "0.9578"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy \\u00b1 EBRT \\u00b1 vaginal brachytherapy",
+            "Service Translation": "tratamiento recomendado: terapia sistémica \\u00b1 EBRT \\u00b1 braquiterapia vaginal",
+            "OpenAI Translation": "tratamiento_recomendado: Terapia sistémica \\u00b1 EBRT \\u00b1 braquiterapia vaginal",
+            "Similarity Score": "0.9481"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology shows a high-grade uterine cancer that has reached the outer lining of the uterus but has not spread to lymph nodes. We recommend a combination of chemotherapy and pelvic radiation, which may include internal vaginal radiation, to reduce the risk of the cancer returning.",
+            "Service Translation": "patient_notes: Su patología muestra un cáncer uterino de alto grado que ha alcanzado el revestimiento exterior del útero pero no se ha diseminado a los ganglios linfáticos. Recomendamos una combinación de quimioterapia y radiación pélvica, que puede incluir radiación vaginal interna, para reducir el riesgo de que el cáncer regrese.",
+            "OpenAI Translation": "notas del paciente: Su patología muestra un cáncer uterino de alto grado que ha alcanzado el revestimiento externo del útero, pero no se ha propagado a los ganglios linfáticos. Recomendamos una combinación de quimioterapia y radiación pélvica, que puede incluir radiación vaginal interna, para reducir el riesgo de que el cáncer regrese.",
+            "Similarity Score": "0.9762"
+        },
+        {
+            "Original Term": "recommended_treatment: Total hysterectomy and bilateral salpingo-oophorectomy with surgical staging followed by carboplatin and paclitaxel chemotherapy plus external beam pelvic radiation and vaginal brachytherapy",
+            "Service Translation": "histerectomía total y salpingooforectomía bilateral con estadificación quirúrgica seguida de quimioterapia con carboplatino y paclitaxel más radiación pélvica de haz externo y braquiterapia vaginal",
+            "OpenAI Translation": "tratamiento_recomendado: Histerectomía total y salpingo-ooforectomía bilateral con estadificación quirúrgica seguida de quimioterapia con carboplatino y paclitaxel, además de radioterapia pélvica de haz externo y braquiterapia vaginal.",
+            "Similarity Score": "0.9025"
+        },
+        {
+            "Original Term": "patient_notes: This report shows uterine serous carcinoma with spread to pelvic, common iliac, and para-aortic lymph nodes. Your uterus, ovaries, and fallopian tubes were removed, and no cancer was found in the ovaries or omentum. To lower the chance of recurrence, you will receive carboplatin and paclitaxel chemotherapy combined with external beam pelvic radiation and a vaginal brachytherapy boost. We will support you through each step of this treatment plan.",
+            "Service Translation": "patient_notes: Este informe muestra carcinoma seroso uterino con diseminación a los ganglios linfáticos pélvicos, ilíacos comunes y paraaórticos. Se le extirparon el útero, los ovarios y las trompas de Falopio, y no se encontró cáncer en los ovarios ni en el omento. Para reducir la probabilidad de recurrencia, recibirá quimioterapia con carboplatino y paclitaxel combinada con radiación pélvica de haz externo y un impulso de braquiterapia vaginal. Le apoyaremos a través de cada paso de este plan de tratamiento.",
+            "OpenAI Translation": "notas del paciente: Este informe muestra carcinoma seroso uterino con diseminación a los ganglios linfáticos pélvicos, ilíacos comunes y paraaórticos. Se le extirparon el útero, los ovarios y las trompas de Falopio, y no se encontró cáncer en los ovarios ni en el epiplón. Para reducir la probabilidad de recurrencia, recibirá quimioterapia con carboplatino y paclitaxel combinada con radioterapia pélvica de haz externo y un refuerzo de braquiterapia vaginal. Le apoyaremos en cada paso de este plan de tratamiento.",
+            "Similarity Score": "0.9871"
+        },
+        {
+            "Original Term": "recommended_treatment: Total hysterectomy with bilateral salpingo-oophorectomy and surgical staging followed by adjuvant carboplatin-paclitaxel chemotherapy and vaginal brachytherapy",
+            "Service Translation": "histerectomía total con salpingooforectomía bilateral y estadificación quirúrgica seguida de quimioterapia adyuvante carboplatino-paclitaxel y braquiterapia vaginal",
+            "OpenAI Translation": "tratamiento_recomendado: Histerectomía total con salpingooforectomía bilateral y estadificación quirúrgica seguida de quimioterapia adyuvante con carboplatino-paclitaxel y braquiterapia vaginal",
+            "Similarity Score": "0.9623"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology report shows a high-grade uterine cancer that has invaded most of the muscle layer but has not spread to your lymph nodes. We recommend removing the uterus and ovaries with surgical staging, followed by chemotherapy and focused radiation to the vaginal area to reduce recurrence risk.",
+            "Service Translation": "patient_notes: Su informe patológico muestra un cáncer uterino de alto grado que ha invadido la mayor parte de la capa muscular pero no se ha diseminado a sus ganglios linfáticos. Recomendamos extirpar el útero y los ovarios con estadificación quirúrgica, seguido de quimioterapia y radiación enfocada al área vaginal para reducir el riesgo de recurrencia.",
+            "OpenAI Translation": "notas del paciente: Su informe de patología muestra un cáncer uterino de alto grado que ha invadido la mayor parte de la capa muscular, pero no se ha propagado a sus ganglios linfáticos. Recomendamos la extirpación del útero y los ovarios con estadificación quirúrgica, seguida de quimioterapia y radiación focalizada en el área vaginal para reducir el riesgo de recurrencia.",
+            "Similarity Score": "0.9803"
+        },
+        {
+            "Original Term": "recommended_treatment: Adjuvant pelvic external beam radiation therapy with vaginal brachytherapy and systemic chemotherapy",
+            "Service Translation": "Recomendado_tratamiento: radioterapia adyuvante de haz pélvico externo con braquiterapia vaginal y quimioterapia sistémica",
+            "OpenAI Translation": "tratamiento_recomendado: Terapia de radiación externa pélvica adyuvante con braquiterapia vaginal y quimioterapia sistémica",
+            "Similarity Score": "0.9590"
+        },
+        {
+            "Original Term": "patient_notes: Your diagnosis is endometrial cancer that was removed by surgery and found to have invaded more than half of the uterine muscle but did not spread to lymph nodes. To lower the chance of return, we recommend targeted radiation to your pelvis and vagina and a course of chemotherapy. This combined approach is standard for your stage of disease and is aimed at improving long-term outcomes.",
+            "Service Translation": "patient_notes: Su diagnóstico es cáncer de endometrio que fue extirpado mediante cirugía y que se encontró que invadió más de la mitad del músculo uterino pero no se diseminó a los ganglios linfáticos. Para reducir la probabilidad de retorno, recomendamos radiación dirigida a la pelvis y la vagina y un curso de quimioterapia. Este enfoque combinado es estándar para su estadio de enfermedad y está dirigido a mejorar los resultados a largo plazo.",
+            "OpenAI Translation": "notas_del_paciente: Su diagnóstico es cáncer de endometrio que fue extirpado mediante cirugía y se encontró que había invadido más de la mitad del músculo uterino, pero no se había propagado a los ganglios linfáticos. Para reducir la probabilidad de recurrencia, recomendamos radioterapia dirigida a su pelvis y vagina, así como un ciclo de quimioterapia. Este enfoque combinado es el estándar para su etapa de la enfermedad y está dirigido a mejorar los resultados a largo plazo.",
+            "Similarity Score": "0.9659"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy plus external beam pelvic radiotherapy and vaginal brachytherapy",
+            "Service Translation": "Recomendado_tratamiento: Terapia sistémica más radioterapia pélvica de haz externo y braquiterapia vaginal",
+            "OpenAI Translation": "tratamiento_recomendado: Terapia sistémica más radioterapia pélvica externa y braquiterapia vaginal",
+            "Similarity Score": "0.9741"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology shows a high-grade uterine cancer that has spread to lymph nodes. The cancer invaded less than half of the uterine muscle but metastasized to several lymph nodes. The recommended plan includes chemotherapy along with targeted radiation to the pelvis and possibly a small internal radiation treatment. Your care team will discuss this combined approach to help reduce the risk of recurrence.",
+            "Service Translation": "patient_notes: Su patología muestra un cáncer uterino de alto grado que se ha diseminado a los ganglios linfáticos. El cáncer invadió menos de la mitad del músculo uterino pero se metástasis a varios ganglios linfáticos. El plan recomendado incluye quimioterapia junto con radiación dirigida a la pelvis y posiblemente un pequeño tratamiento de radiación interna. Su equipo de atención discutirá este enfoque combinado para ayudar a reducir el riesgo de recurrencia.",
+            "OpenAI Translation": "notas del paciente: Su patología muestra un cáncer uterino de alto grado que se ha extendido a los ganglios linfáticos. El cáncer invadió menos de la mitad del músculo uterino, pero hizo metástasis en varios ganglios linfáticos. El plan recomendado incluye quimioterapia junto con radiación dirigida a la pelvis y posiblemente un pequeño tratamiento de radiación interna. Su equipo de atención discutirá este enfoque combinado para ayudar a reducir el riesgo de recurrencia.",
+            "Similarity Score": "0.9784"
+        }
+    ],
+    "French": [
+        {
+            "Original Term": "recommended_treatment: Adjuvant vaginal brachytherapy with consideration of external beam radiation therapy per NCCN Stage IA grade 3 guidelines",
+            "Service Translation": "recommended_treatment: Brachythérapie vaginale adjuvante en tenant compte de la radiothérapie par faisceau externe selon les lignes directrices de niveau 3 du NCCN Stage IA",
+            "OpenAI Translation": "traitement_recommandé : Curiethérapie vaginale adjuvante avec considération de la radiothérapie externe selon les directives NCCN pour le stade IA grade 3.",
+            "Similarity Score": "0.8881"
+        },
+        {
+            "Original Term": "patient_notes: Your surgery removed the uterine cancer, which was limited to the inner half of the uterine muscle and did not spread to your lymph nodes. This is considered an early stage (IA) cancer. Based on guidelines, additional treatment may be recommended to reduce the risk of recurrence, and your care team will discuss options such as radiation therapy. We will work together to plan the next steps for your care.",
+            "Service Translation": "Patient_notes: Votre chirurgie a éliminé le cancer de l'utérus, qui était limité à la moitié interne du muscle utérin et ne s'est pas propagé à vos ganglions lymphatiques. Ceci est considéré comme un cancer de stade précoce (IA). Selon les lignes directrices, un traitement supplémentaire peut être recommandé pour réduire le risque de récidive, et votre équipe de soins discutera d'options telles que la radiothérapie.",
+            "OpenAI Translation": "notes du patient : Votre chirurgie a permis de retirer le cancer de l'utérus, qui était limité à la moitié interne du muscle utérin et ne s'est pas propagé à vos ganglions lymphatiques. Cela est considéré comme un cancer à un stade précoce (IA). Selon les directives, un traitement supplémentaire peut être recommandé pour réduire le risque de récidive, et votre équipe de soins discutera des options telles que la radiothérapie. Nous travaillerons ensemble pour planifier les prochaines étapes de vos soins.",
+            "Similarity Score": "0.9740"
+        },
+        {
+            "Original Term": "recommended_treatment: Observation",
+            "Service Translation": "Traitement_recommandé: Observation",
+            "OpenAI Translation": "traitement_recommandé : Observation",
+            "Similarity Score": "0.7376"
+        },
+        {
+            "Original Term": "patient_notes: Your report shows a low-grade endometrial cancer confined to the uterine lining with no spread to lymph nodes. No further treatment beyond your surgery is typically necessary. We recommend close monitoring with regular follow-up appointments.",
+            "Service Translation": "patient_notes: Votre rapport montre un cancer de l'endomètre de bas grade confiné à la doublure utérine sans propagation aux ganglions lymphatiques. Aucun autre traitement au-delà de votre chirurgie n'est généralement nécessaire.",
+            "OpenAI Translation": "notes du patient : Votre rapport montre un cancer de l'endomètre de bas grade confiné à la muqueuse utérine sans propagation aux ganglions lymphatiques. Aucun traitement supplémentaire au-delà de votre chirurgie n'est généralement nécessaire. Nous recommandons une surveillance étroite avec des rendez-vous de suivi réguliers.",
+            "Similarity Score": "0.9609"
+        },
+        {
+            "Original Term": "recommended_treatment: Observation or vaginal brachytherapy",
+            "Service Translation": "Traitement_recommandé: Observation ou brachythérapie vaginale",
+            "OpenAI Translation": "Traitement recommandé : Observation ou curiethérapie vaginale",
+            "Similarity Score": "0.8858"
+        },
+        {
+            "Original Term": "patient_notes: Your report shows a grade 2 endometrial cancer confined to the upper wall of the uterus with no lymph node spread. You have had surgery to remove the uterus and ovaries with no remaining cancer. Given the low stage, we will monitor you closely and may recommend a small internal vaginal radiation treatment to lower the chance of recurrence. Follow-up visits and imaging will be scheduled regularly.",
+            "Service Translation": "patient_notes: Votre rapport montre un cancer de l'endomètre de grade 2 confiné à la paroi supérieure de l'utérus sans propagation des ganglions lymphatiques. Vous avez subi une chirurgie pour enlever l'utérus et les ovaires sans cancer restant. Étant donné le stade bas, nous vous surveillerons de près et vous recommanderons peut-être un petit traitement vaginal interne pour réduire les risques de récidive.",
+            "OpenAI Translation": "notes du patient : Votre rapport indique un cancer de l'endomètre de grade 2 confiné à la paroi supérieure de l'utérus sans propagation aux ganglions lymphatiques. Vous avez subi une intervention chirurgicale pour retirer l'utérus et les ovaires sans cancer résiduel. Étant donné le stade peu avancé, nous vous surveillerons de près et pourrions recommander un petit traitement de radiothérapie vaginale interne pour réduire le risque de récidive. Des visites de suivi et des examens d'imagerie seront programmés régulièrement.",
+            "Similarity Score": "0.9539"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy \\u00b1 EBRT \\u00b1 vaginal brachytherapy",
+            "Service Translation": "Traitement_recommandé: Thérapie systémique \\u00b1 EBRT \\u00b1 brachythérapie vaginale",
+            "OpenAI Translation": "traitement_recommandé : Thérapie systémique \\u00b1 EBRT \\u00b1 curiethérapie vaginale",
+            "Similarity Score": "0.8905"
+        },
+        {
+            "Original Term": "patient_notes: Your surgery showed endometrial cancer that invaded the uterine muscle less than halfway, spread to the cervix and an ovary, but did not involve the lymph nodes. This is classified as stage IIIA. The recommended treatment includes chemotherapy and may include focused radiation to the pelvis or vaginal area. We will guide you through each step and provide support throughout your treatment.",
+            "Service Translation": "patient_notes: Votre chirurgie a montré un cancer de l'endomètre qui a envahi le muscle utérin moins de la moitié, s'est propagé au col et à un ovaire, mais n'a pas impliqué les ganglions lymphatiques. Ceci est classé comme stade IIIA. Le traitement recommandé comprend la chimiothérapie et peut inclure des radiations ciblées au bassin ou à la zone vaginale. Nous vous guiderons à travers chaque étape et fournirons un soutien tout au long de votre traitement.",
+            "OpenAI Translation": "notes du patient : Votre chirurgie a révélé un cancer de l'endomètre qui a envahi le muscle utérin à moins de la moitié, s'est propagé au col de l'utérus et à un ovaire, mais n'a pas touché les ganglions lymphatiques. Cela est classé comme stade IIIA. Le traitement recommandé comprend la chimiothérapie et peut inclure une radiothérapie ciblée sur la région pelvienne ou vaginale. Nous vous guiderons à chaque étape et vous fournirons un soutien tout au long de votre traitement.",
+            "Similarity Score": "0.9678"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy with or without external beam radiation therapy and/or vaginal brachytherapy",
+            "Service Translation": "Traitement_recommandé: Thérapie systémique avec ou sans radiothérapie externe et/ou brachythérapie vaginale",
+            "OpenAI Translation": "traitement_recommandé : Thérapie systémique avec ou sans radiothérapie externe et/ou curiethérapie vaginale",
+            "Similarity Score": "0.9316"
+        },
+        {
+            "Original Term": "patient_notes: The pathology report shows a high-grade uterine serous carcinoma removed by hysterectomy with focal superficial myometrial invasion and no nodal or distant disease. Based on NCCN guidelines for high-risk histology Stage IA uterine serous carcinoma, adjuvant systemic chemotherapy with or without vaginal brachytherapy is recommended to reduce recurrence risk.",
+            "Service Translation": "patient_notes: Le rapport de pathologie montre un carcinome séreux utérin de haute qualité enlevé par hystérectomie avec invasion myométriale superficielle focale et aucune maladie nodale ou lointaine. Selon les lignes directrices du NCCN pour l'histologie à haut risque Phase IA carcinome séreux utérin, une chimiothérapie systémique adjuvante avec ou sans brachythérapie vaginale est recommandée pour réduire le risque de récidive.",
+            "OpenAI Translation": "notes du patient : Le rapport de pathologie montre un carcinome séreux utérin de haut grade retiré par hystérectomie avec une invasion myométriale superficielle focale et aucune maladie nodale ou à distance. Selon les directives de la NCCN pour l'histologie à haut risque du carcinome séreux utérin de stade IA, une chimiothérapie systémique adjuvante avec ou sans curiethérapie vaginale est recommandée pour réduire le risque de récidive.",
+            "Similarity Score": "0.9671"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy \\u00b1 EBRT \\u00b1 vaginal brachytherapy",
+            "Service Translation": "Traitement_recommandé: Thérapie systémique \\u00b1 EBRT \\u00b1 brachythérapie vaginale",
+            "OpenAI Translation": "traitement_recommandé : Thérapie systémique \\u00b1 RT externe \\u00b1 curiethérapie vaginale",
+            "Similarity Score": "0.8576"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology shows a high-grade uterine cancer that has reached the outer lining of the uterus but has not spread to lymph nodes. We recommend a combination of chemotherapy and pelvic radiation, which may include internal vaginal radiation, to reduce the risk of the cancer returning.",
+            "Service Translation": "patient_notes: Votre pathologie montre un cancer de l'utérus de haute qualité qui a atteint la paroi externe de l'utérus mais ne s'est pas propagé aux ganglions lymphatiques. Nous recommandons une combinaison de chimiothérapie et de radiation pelvienne, qui peut inclure le rayonnement vaginal interne, pour réduire le risque de retour du cancer.",
+            "OpenAI Translation": "notes du patient : Votre pathologie montre un cancer utérin de haut grade qui a atteint la paroi externe de l'utérus mais ne s'est pas propagé aux ganglions lymphatiques. Nous recommandons une combinaison de chimiothérapie et de radiothérapie pelvienne, qui peut inclure une radiothérapie vaginale interne, afin de réduire le risque de récidive du cancer.",
+            "Similarity Score": "0.9585"
+        },
+        {
+            "Original Term": "recommended_treatment: Total hysterectomy and bilateral salpingo-oophorectomy with surgical staging followed by carboplatin and paclitaxel chemotherapy plus external beam pelvic radiation and vaginal brachytherapy",
+            "Service Translation": "Traitement_recommandé: hystérectomie totale et hystérectomie bilatérale salpingo-ophorectomie avec halte chirurgicale suivie d'une chimiothérapie au carboplatine et au paclitaxel plus rayonnement pelvien externe et brachythérapie vaginale",
+            "OpenAI Translation": "Traitement recommandé : Hystérectomie totale et salpingo-ovariectomie bilatérale avec stadification chirurgicale suivie d'une chimiothérapie à base de carboplatine et de paclitaxel, ainsi que d'une radiothérapie pelvienne externe et d'une curiethérapie vaginale.",
+            "Similarity Score": "0.9524"
+        },
+        {
+            "Original Term": "patient_notes: This report shows uterine serous carcinoma with spread to pelvic, common iliac, and para-aortic lymph nodes. Your uterus, ovaries, and fallopian tubes were removed, and no cancer was found in the ovaries or omentum. To lower the chance of recurrence, you will receive carboplatin and paclitaxel chemotherapy combined with external beam pelvic radiation and a vaginal brachytherapy boost. We will support you through each step of this treatment plan.",
+            "Service Translation": "patient_notes: Ce rapport montre le carcinome séreux utérin avec propagation aux ganglions lymphatiques pelviens, iliaques communs et para-aortiques. Votre utérus, ovaires et trompes de Fallope ont été enlevés, et aucun cancer n'a été trouvé dans les ovaires ou l'omentum. Pour diminuer le risque de récidive, vous recevrez la chimiothérapie carboplatine et paclitaxel combinée avec le rayonnement pelvien externe et un boost de brachythérapie vaginale.",
+            "OpenAI Translation": "notes du patient : Ce rapport montre un carcinome séreux de l'utérus avec propagation aux ganglions lymphatiques pelviens, iliaques communs et para-aortiques. Votre utérus, vos ovaires et vos trompes de Fallope ont été retirés, et aucun cancer n'a été trouvé dans les ovaires ou l'épiploon. Pour réduire le risque de récidive, vous recevrez une chimiothérapie à base de carboplatine et de paclitaxel, combinée à une radiothérapie pelvienne externe et un complément de curiethérapie vaginale. Nous vous soutiendrons à chaque étape de ce plan de traitement.",
+            "Similarity Score": "0.9552"
+        },
+        {
+            "Original Term": "recommended_treatment: Total hysterectomy with bilateral salpingo-oophorectomy and surgical staging followed by adjuvant carboplatin-paclitaxel chemotherapy and vaginal brachytherapy",
+            "Service Translation": "Traitement_recommandé: hystérectomie totale avec salpingo-ophorectomie bilatérale et halte chirurgicale suivie d'une chimiothérapie adjuvante carboplatine-paclitaxel et d'une brachythérapie vaginale",
+            "OpenAI Translation": "Traitement recommandé : Hystérectomie totale avec salpingo-ovariectomie bilatérale et stadification chirurgicale suivie d'une chimiothérapie adjuvante au carboplatine-paclitaxel et de brachythérapie vaginale.",
+            "Similarity Score": "0.9779"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology report shows a high-grade uterine cancer that has invaded most of the muscle layer but has not spread to your lymph nodes. We recommend removing the uterus and ovaries with surgical staging, followed by chemotherapy and focused radiation to the vaginal area to reduce recurrence risk.",
+            "Service Translation": "patient_notes: Votre rapport de pathologie montre un cancer de l'utérus de haute qualité qui a envahi la majeure partie de la couche musculaire mais ne s'est pas propagé à vos ganglions lymphatiques. Nous recommandons d'enlever l'utérus et les ovaires avec halte chirurgicale, suivi par la chimiothérapie et le rayonnement ciblé dans la zone vaginale pour réduire le risque de récidive.",
+            "OpenAI Translation": "notes du patient : Votre rapport de pathologie indique un cancer de l'utérus de haut grade qui a envahi la majeure partie de la couche musculaire, mais ne s'est pas propagé à vos ganglions lymphatiques. Nous recommandons de retirer l'utérus et les ovaires avec une stadification chirurgicale, suivie d'une chimiothérapie et d'une radiothérapie ciblée sur la zone vaginale pour réduire le risque de récidive.",
+            "Similarity Score": "0.9687"
+        },
+        {
+            "Original Term": "recommended_treatment: Adjuvant pelvic external beam radiation therapy with vaginal brachytherapy and systemic chemotherapy",
+            "Service Translation": "Traitement_recommandé: Radiothérapie externe pelvienne adjuvante avec brachythérapie vaginale et chimiothérapie systémique",
+            "OpenAI Translation": "traitement_recommandé : Radiothérapie externe pelvienne adjuvante avec curiethérapie vaginale et chimiothérapie systémique",
+            "Similarity Score": "0.9499"
+        },
+        {
+            "Original Term": "patient_notes: Your diagnosis is endometrial cancer that was removed by surgery and found to have invaded more than half of the uterine muscle but did not spread to lymph nodes. To lower the chance of return, we recommend targeted radiation to your pelvis and vagina and a course of chemotherapy. This combined approach is standard for your stage of disease and is aimed at improving long-term outcomes.",
+            "Service Translation": "patient_notes: Votre diagnostic est le cancer de l'endomètre qui a été enlevé par la chirurgie et qui s'est avéré avoir envahi plus de la moitié du muscle utérin mais ne s'est pas propagé aux ganglions lymphatiques. Pour réduire les chances de retour, nous recommandons un rayonnement ciblé à votre bassin et vagin et un cours de chimiothérapie. Cette approche combinée est standard pour votre stade de la maladie et vise à améliorer les résultats à long terme.",
+            "OpenAI Translation": "notes du patient : Votre diagnostic est un cancer de l'endomètre qui a été retiré par chirurgie et qui a envahi plus de la moitié du muscle utérin, mais ne s'est pas propagé aux ganglions lymphatiques. Pour réduire le risque de récidive, nous recommandons une radiothérapie ciblée sur votre pelvis et votre vagin ainsi qu'un traitement de chimiothérapie. Cette approche combinée est standard pour votre stade de la maladie et vise à améliorer les résultats à long terme.",
+            "Similarity Score": "0.9577"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy plus external beam pelvic radiotherapy and vaginal brachytherapy",
+            "Service Translation": "recommended_traitement: Thérapie systémique plus radiothérapie pelvienne externe et brachythérapie vaginale",
+            "OpenAI Translation": "Traitement recommandé : Thérapie systémique plus radiothérapie pelvienne externe et curiethérapie vaginale.",
+            "Similarity Score": "0.9538"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology shows a high-grade uterine cancer that has spread to lymph nodes. The cancer invaded less than half of the uterine muscle but metastasized to several lymph nodes. The recommended plan includes chemotherapy along with targeted radiation to the pelvis and possibly a small internal radiation treatment. Your care team will discuss this combined approach to help reduce the risk of recurrence.",
+            "Service Translation": "Patient_notes: Votre pathologie montre un cancer de l'utérus de haute qualité qui s'est propagé aux ganglions lymphatiques. Le cancer a envahi moins de la moitié du muscle utérin mais métastasé à plusieurs ganglions lymphatiques. Le plan recommandé comprend la chimiothérapie ainsi que le rayonnement ciblé au bassin et éventuellement un petit traitement de radiation interne. Votre équipe de soins discutera de cette approche combinée pour aider à réduire le risque de récidive.",
+            "OpenAI Translation": "notes du patient : Votre pathologie montre un cancer de l'utérus de haut grade qui s'est propagé aux ganglions lymphatiques. Le cancer a envahi moins de la moitié du muscle utérin mais a métastasé à plusieurs ganglions lymphatiques. Le plan recommandé comprend une chimiothérapie accompagnée d'une radiothérapie ciblée sur le bassin et possiblement un petit traitement de radiothérapie interne. Votre équipe de soins discutera de cette approche combinée pour aider à réduire le risque de récidive.",
+            "Similarity Score": "0.9791"
+        }
+    ],
+    "Arabic": [
+        {
+            "Original Term": "recommended_treatment: Adjuvant vaginal brachytherapy with consideration of external beam radiation therapy per NCCN Stage IA grade 3 guidelines",
+            "Service Translation": "معالجة مهبلية مهبلية أدجوفانت مع مراعاة العلاج الإشعاعي الإشعاعي الخارجي وفقاً للمبادئ التوجيهية للصف الثالث من المرحلة الأولى ألف من المرحلة الأولى",
+            "OpenAI Translation": "العلاج الموصى به: العلاج الإشعاعي الموضعي المساعد للمهبل مع النظر في العلاج الإشعاعي الخارجي وفقًا لإرشادات NCCN للمرحلة IA الدرجة 3.",
+            "Similarity Score": "0.8107"
+        },
+        {
+            "Original Term": "patient_notes: Your surgery removed the uterine cancer, which was limited to the inner half of the uterine muscle and did not spread to your lymph nodes. This is considered an early stage (IA) cancer. Based on guidelines, additional treatment may be recommended to reduce the risk of recurrence, and your care team will discuss options such as radiation therapy. We will work together to plan the next steps for your care.",
+            "Service Translation": "ملاحظات: لقد أزالت جراحتك سرطان الرحم، الذي كان يقتصر على النصف الداخلي للعضلات الرحمية ولم ينتشر إلى العقد اللمفاوية. يعتبر هذا سرطاناً في مرحلة مبكرة. استناداً إلى المبادئ التوجيهية، يمكن التوصية بعلاج إضافي للحد من خطر التكرار، وسوف يناقش فريق الرعاية لديك خيارات مثل العلاج الإشعاعي. سوف نعمل معاً للتخطيط للخطوات التالية من أجل رعايتك.",
+            "OpenAI Translation": "ملاحظات المريض: لقد أزالت جراحتك سرطان الرحم، الذي كان محدودًا في النصف الداخلي من عضلة الرحم ولم ينتشر إلى العقد الليمفاوية. يُعتبر هذا سرطانًا في مرحلة مبكرة (IA). بناءً على الإرشادات، قد يُوصى بعلاج إضافي لتقليل خطر التكرار، وسيناقش فريق الرعاية الخاص بك الخيارات مثل العلاج الإشعاعي. سنعمل معًا لتخطيط الخطوات التالية لرعايتك.",
+            "Similarity Score": "0.9137"
+        },
+        {
+            "Original Term": "recommended_treatment: Observation",
+            "Service Translation": "- ما يوصَى به من إساءة المعاملة: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -",
+            "OpenAI Translation": "العلاج الموصى به: المراقبة",
+            "Similarity Score": "0.4017"
+        },
+        {
+            "Original Term": "patient_notes: Your report shows a low-grade endometrial cancer confined to the uterine lining with no spread to lymph nodes. No further treatment beyond your surgery is typically necessary. We recommend close monitoring with regular follow-up appointments.",
+            "Service Translation": "يظهر تقريرك سرطاناً داخلياً منخفض المستوى محصوراً في بطانة الرحم بدون إنتشار إلى العقد اللمفاوية. لا علاج آخر غير جراحتك هو ضروري عادة. نوصي بالرصد عن كثب مع مواعيد متابعة منتظمة.",
+            "OpenAI Translation": "ملاحظات المريض: يُظهر تقريرك وجود سرطان بطانة الرحم من الدرجة المنخفضة محصور في بطانة الرحم دون انتشار إلى العقد الليمفاوية. عادةً لا تكون هناك حاجة لعلاج إضافي بعد الجراحة. نوصي بالمراقبة الدقيقة مع مواعيد متابعة منتظمة.",
+            "Similarity Score": "0.9330"
+        },
+        {
+            "Original Term": "recommended_treatment: Observation or vaginal brachytherapy",
+            "Service Translation": "ما يلي: المراقبة أو المهبل",
+            "OpenAI Translation": "العلاج الموصى به: المراقبة أو العلاج الإشعاعي المهبلي (براكي ثيرابي)",
+            "Similarity Score": "0.4278"
+        },
+        {
+            "Original Term": "patient_notes: Your report shows a grade 2 endometrial cancer confined to the upper wall of the uterus with no lymph node spread. You have had surgery to remove the uterus and ovaries with no remaining cancer. Given the low stage, we will monitor you closely and may recommend a small internal vaginal radiation treatment to lower the chance of recurrence. Follow-up visits and imaging will be scheduled regularly.",
+            "Service Translation": "تظهر في تقريرك سرطاناً داخلياً من الدرجة الثانية محصوراً في الجدار العلوي للرحم بدون انتشار العقدة اللمفاوية. لقد أجريت عملية جراحية لإزالة الرحم والمبايض بدون سرطان متبقي. نظراً للمرحلة المنخفضة، سنراقبكم عن كثب ويمكننا أن نوصي بعلاج داخلي صغير للإشعاع المهبلي لتقليل فرص تكراره. سيتم بانتظام إجراء زيارات المتابعة والتصوير.",
+            "OpenAI Translation": "ملاحظات المريض: يُظهر تقريرك سرطان بطانة الرحم من الدرجة الثانية محصورًا في الجدار العلوي للرحم دون انتشار إلى العقد الليمفاوية. لقد خضعت لجراحة لإزالة الرحم والمبيضين دون بقاء أي سرطان. نظرًا للمرحلة المنخفضة، سنقوم بمراقبتك عن كثب وقد نوصي بعلاج إشعاعي داخلي صغير للمهبل لتقليل فرصة التكرار. سيتم تحديد زيارات المتابعة والتصوير بانتظام.",
+            "Similarity Score": "0.9283"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy \\u00b1 EBRT \\u00b1 vaginal brachytherapy",
+            "Service Translation": "العلاج النظامي: العلاج المهبلي المهبلي",
+            "OpenAI Translation": "العلاج الموصى به: العلاج الجهازي \\u00b1 العلاج الإشعاعي الخارجي \\u00b1 العلاج الإشعاعي الموضعي المهبلي",
+            "Similarity Score": "0.7464"
+        },
+        {
+            "Original Term": "patient_notes: Your surgery showed endometrial cancer that invaded the uterine muscle less than halfway, spread to the cervix and an ovary, but did not involve the lymph nodes. This is classified as stage IIIA. The recommended treatment includes chemotherapy and may include focused radiation to the pelvis or vaginal area. We will guide you through each step and provide support throughout your treatment.",
+            "Service Translation": "ملاحظة: أظهرت جراحتك سرطاناً داخلياً داخلياً اجتاح عضلة الرحم أقل من منتصف الطريق، وامتد إلى عنق الرحم والمبيض، ولكنه لم يشمل العقد اللمفاوية. هذا مصنف على أنه المرحلة الثالثة ألف. العلاج الموصى به يشمل العلاج الكيميائي وقد يشمل إشعاعاً مركزاً إلى الحوض أو المنطقة المهبلية. سوف نرشدكم خلال كل خطوة ونوفر الدعم طوال علاجكم.",
+            "OpenAI Translation": "ملاحظات المريض: أظهرت الجراحة أن لديك سرطان بطانة الرحم الذي غزا عضلة الرحم بأقل من النصف، وانتشر إلى عنق الرحم ومبيض واحد، لكنه لم يشمل العقد الليمفاوية. يتم تصنيف هذا على أنه المرحلة الثالثة (IIIA). يشمل العلاج الموصى به العلاج الكيميائي وقد يشمل العلاج الإشعاعي المركز على منطقة الحوض أو المهبل. سنقوم بإرشادك خلال كل خطوة وتقديم الدعم طوال فترة علاجك.",
+            "Similarity Score": "0.9407"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy with or without external beam radiation therapy and/or vaginal brachytherapy",
+            "Service Translation": "العلاج النظامي بالعلاج الإشعاعي و/أو العلاج الإبتري المهبلي بالعلاج الإشعاعي و/أو العلاج الإشعاعي المهبلي أو بدونه",
+            "OpenAI Translation": "العلاج الموصى به: العلاج الجهازي مع أو بدون العلاج الإشعاعي الخارجي و/أو العلاج الإشعاعي المهبلي.",
+            "Similarity Score": "0.9488"
+        },
+        {
+            "Original Term": "patient_notes: The pathology report shows a high-grade uterine serous carcinoma removed by hysterectomy with focal superficial myometrial invasion and no nodal or distant disease. Based on NCCN guidelines for high-risk histology Stage IA uterine serous carcinoma, adjuvant systemic chemotherapy with or without vaginal brachytherapy is recommended to reduce recurrence risk.",
+            "Service Translation": "يُظهر التقرير المرضي أن سرطاناً في الرحم عالي الجودة قد أزيل عن طريق استئصال الرحم مع التركيز السطحي للغزو العُقدي أو عدم وجود مرض عقدي أو بعيد. واستناداً إلى المبادئ التوجيهية لشبكة NCNA بشأن علم الأنسجة عالي الخطورة المرحلة الأولى ألف من سرطانات عن طريق سرطانات الرحم، يوصى بإجراء علاج كيميولوجي منهجي من خلال أو بدون علاج مهبلي للبرقيات للحد من خطر التكرار.",
+            "OpenAI Translation": "ملاحظات المريض: يُظهر تقرير علم الأمراض وجود سرطان مصلي رحمي عالي الدرجة تمت إزالته عن طريق استئصال الرحم مع غزو سطحي بؤري للعضل الرحمي دون وجود مرض في العقد اللمفاوية أو مرض بعيد. بناءً على إرشادات NCCN لسرطان الرحم المصلي عالي الخطورة في المرحلة IA، يُوصى بالعلاج الكيميائي الجهازي المساعد مع أو بدون العلاج الإشعاعي المهبلي لتقليل خطر التكرار.",
+            "Similarity Score": "0.9045"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy \\u00b1 EBRT \\u00b1 vaginal brachytherapy",
+            "Service Translation": "العلاج النظامي: العلاج المهبلي المهبلي",
+            "OpenAI Translation": "العلاج الموصى به: العلاج الجهازي \\u00b1 العلاج الإشعاعي الخارجي \\u00b1 العلاج الإشعاعي الموضعي المهبلي",
+            "Similarity Score": "0.7464"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology shows a high-grade uterine cancer that has reached the outer lining of the uterus but has not spread to lymph nodes. We recommend a combination of chemotherapy and pelvic radiation, which may include internal vaginal radiation, to reduce the risk of the cancer returning.",
+            "Service Translation": "تظهر أمراضك سرطاناً رحمياً عالي الجودة وصل إلى البطانة الخارجية من الرحم ولكنه لم ينتشر إلى العقد اللمفاوية، ونوصي بمجموعة من العلاج الكيميائي والإشعاع الحوضي، والتي قد تشمل إشعاعاً مهبلياً داخلياً، للحد من خطر عودة السرطان.",
+            "OpenAI Translation": "ملاحظات المريض: تظهر الفحوصات المرضية لديك سرطان رحم عالي الدرجة وقد وصل إلى البطانة الخارجية للرحم ولكنه لم ينتشر إلى العقد الليمفاوية. نوصي بمزيج من العلاج الكيميائي والإشعاع الحوضي، والذي قد يشمل الإشعاع المهبلي الداخلي، لتقليل خطر عودة السرطان.",
+            "Similarity Score": "0.9289"
+        },
+        {
+            "Original Term": "recommended_treatment: Total hysterectomy and bilateral salpingo-oophorectomy with surgical staging followed by carboplatin and paclitaxel chemotherapy plus external beam pelvic radiation and vaginal brachytherapy",
+            "Service Translation": "* العلاج الموصى به: مجموع استئصال الرحم واجتثاث السالبينغو-أوبهور الثنائي مع إجراء جراحي يليه كاربوبلاتين وعلاج كيميائي بacilitaxel بالإضافة إلى الإشعاع الحوضي الخارجي وعلاج النسل المهبلي",
+            "OpenAI Translation": "العلاج الموصى به: استئصال الرحم الكلي واستئصال البوق والمبيضين الثنائي مع تحديد المرحلة الجراحية، يليه العلاج الكيميائي بالكاربوبلاتين والباكليتاكسيل بالإضافة إلى العلاج الإشعاعي الخارجي للحوض والمعالجة الإشعاعية المهبلية.",
+            "Similarity Score": "0.9028"
+        },
+        {
+            "Original Term": "patient_notes: This report shows uterine serous carcinoma with spread to pelvic, common iliac, and para-aortic lymph nodes. Your uterus, ovaries, and fallopian tubes were removed, and no cancer was found in the ovaries or omentum. To lower the chance of recurrence, you will receive carboplatin and paclitaxel chemotherapy combined with external beam pelvic radiation and a vaginal brachytherapy boost. We will support you through each step of this treatment plan.",
+            "Service Translation": "ملاحظة: يظهر هذا التقرير سرطاناً رحمياً مع انتشاره إلى purc, liliac, and par-aortic اللمحة اللمفاوية. تم إزالة رحمك، المبيض، والأنابيب الفلورية، ولم يوجد سرطان في المبيض أو الرخام. وبغية تقليل احتمال التكرار، سوف تتلقون علاجاً كيميائياً كربوبلتين وpacilitaxel مقترناً مع إشعاع شعاعي خارجي، وعلاج مهبلي، وسندعمكم من خلال كل خطوة من هذه الخطة العلاجية.",
+            "OpenAI Translation": "ملاحظات المريض: يُظهر هذا التقرير سرطان الرحم المصلي مع انتشار إلى العقد الليمفاوية الحوضية، الحرقفية المشتركة، والبارا أورتية. تم إزالة الرحم والمبيضين وقناتي فالوب، ولم يتم العثور على سرطان في المبيضين أو الثرب. لتقليل فرصة التكرار، سوف تتلقين علاجًا كيميائيًا بالكاربوبلاتين والباكليتاكسيل مع العلاج الإشعاعي الخارجي للحوض وتعزيز بالعلاج الإشعاعي المهبلي. سنقوم بدعمك في كل خطوة من خطوات خطة العلاج هذه.",
+            "Similarity Score": "0.8563"
+        },
+        {
+            "Original Term": "recommended_treatment: Total hysterectomy with bilateral salpingo-oophorectomy and surgical staging followed by adjuvant carboplatin-paclitaxel chemotherapy and vaginal brachytherapy",
+            "Service Translation": "_ التي يُوصَى بها: استئصال الرحم الكامل مع الاستئصال الثنائي للسالبنغو - أوبورو والتقويم الجراحي الذي يليه العلاج الكيميائي بالعلاج الكيميائي بالعلاج المهبلي والعلاج الرحمي المهبلي",
+            "OpenAI Translation": "العلاج الموصى به: استئصال الرحم الكلي مع استئصال البوقين والمبيضين الثنائي وتحديد المرحلة الجراحية، يتبعها العلاج الكيميائي المساعد بكاربوبلاتين وباكليتاكسيل والعلاج الإشعاعي الموضعي المهبلي.",
+            "Similarity Score": "0.8312"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology report shows a high-grade uterine cancer that has invaded most of the muscle layer but has not spread to your lymph nodes. We recommend removing the uterus and ovaries with surgical staging, followed by chemotherapy and focused radiation to the vaginal area to reduce recurrence risk.",
+            "Service Translation": "يُظهر تقريرك عن الأمراض سرطاناً رحمياً عالي الجودة والذي اجتاح معظم الطبقة العضلية لكنه لم ينتشر إلى العقد اللمفاوية. نوصي بإزالة الرحم والمبايض مع التمركز الجراحي، يليه العلاج الكيميائي والإشعاع المركز إلى منطقة المهبل للحد من خطر التكرار.",
+            "OpenAI Translation": "ملاحظات المريض: يُظهر تقرير علم الأمراض لديك سرطان رحم عالي الدرجة وقد غزا معظم طبقة العضلات لكنه لم ينتشر إلى العقد الليمفاوية. نوصي بإزالة الرحم والمبيضين مع تحديد المرحلة جراحياً، يتبعها العلاج الكيميائي والإشعاع المركّز على منطقة المهبل لتقليل خطر التكرار.",
+            "Similarity Score": "0.9217"
+        },
+        {
+            "Original Term": "recommended_treatment: Adjuvant pelvic external beam radiation therapy with vaginal brachytherapy and systemic chemotherapy",
+            "Service Translation": "العلاج الإشعاعي الخارجي بالأشعة الخارجية مع العلاج المهبلي للبتريات والعلاج الكيميائي العام",
+            "OpenAI Translation": "العلاج الموصى به: العلاج الإشعاعي الخارجي للحوض مع العلاج الإشعاعي الموضعي للمهبل والعلاج الكيميائي الجهازي.",
+            "Similarity Score": "0.9203"
+        },
+        {
+            "Original Term": "patient_notes: Your diagnosis is endometrial cancer that was removed by surgery and found to have invaded more than half of the uterine muscle but did not spread to lymph nodes. To lower the chance of return, we recommend targeted radiation to your pelvis and vagina and a course of chemotherapy. This combined approach is standard for your stage of disease and is aimed at improving long-term outcomes.",
+            "Service Translation": "تشخيصك هو سرطان الغدة الدهنية الذي أزيل عن طريق الجراحة ووجد أنه غزا أكثر من نصف عضلات الرحم ولكنه لم ينتشر إلى العقد اللمفاوية. لتقليل فرصة العودة، نوصي بالإشعاع الموجه إلى أحوضكم ومهبلكم ومسار العلاج الكيميائي. هذا النهج المشترك هو معيار لمرحلة مرضكم ويهدف إلى تحسين النتائج الطويلة الأجل.",
+            "OpenAI Translation": "ملاحظات المريض: تشخيصك هو سرطان بطانة الرحم الذي تم استئصاله جراحياً ووجد أنه غزا أكثر من نصف عضلة الرحم ولكنه لم ينتشر إلى العقد الليمفاوية. لتقليل فرصة عودة المرض، نوصي بالعلاج الإشعاعي الموجه إلى الحوض والمهبل ودورة من العلاج الكيميائي. هذا النهج المشترك هو المعيار لمرحلة مرضك ويهدف إلى تحسين النتائج على المدى الطويل.",
+            "Similarity Score": "0.9030"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy plus external beam pelvic radiotherapy and vaginal brachytherapy",
+            "Service Translation": "المعاملة الموصى بها: العلاج النظامي زائداً العلاج الإشعاعي بالشعاع الخارجي والعلاج بالجرعة المهبلية",
+            "OpenAI Translation": "العلاج الموصى به: العلاج الجهازي بالإضافة إلى العلاج الإشعاعي الخارجي للحوض والعلاج الإشعاعي الموضعي المهبلي.",
+            "Similarity Score": "0.9002"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology shows a high-grade uterine cancer that has spread to lymph nodes. The cancer invaded less than half of the uterine muscle but metastasized to several lymph nodes. The recommended plan includes chemotherapy along with targeted radiation to the pelvis and possibly a small internal radiation treatment. Your care team will discuss this combined approach to help reduce the risk of recurrence.",
+            "Service Translation": "أظهر مرضك سرطان رحمي عالي الجودة والذي انتشر إلى العقد اللمفاوية، واجتاح السرطان أقل من نصف العضلات الرحمية ولكنه انتشر إلى العديد من العُقَد اللمفاوية، وتشمل الخطة الموصى بها العلاج الكيميائي جنباً إلى جنب مع إشعاع موجه إلى الحوض وربما علاج إشعاعي داخلي صغير. سوف يناقش فريق الرعاية الخاص بك هذا النهج المشترك للمساعدة في الحد من خطر التكرار.",
+            "OpenAI Translation": "ملاحظات المريض: تُظهر نتائج علم الأمراض لديك سرطان رحم عالي الدرجة انتشر إلى العقد الليمفاوية. لقد غزا السرطان أقل من نصف عضلة الرحم ولكنه انتشر إلى عدة عقد ليمفاوية. تتضمن الخطة الموصى بها العلاج الكيميائي إلى جانب العلاج الإشعاعي المستهدف لمنطقة الحوض وربما علاج إشعاعي داخلي صغير. سيناقش فريق الرعاية الخاص بك هذا النهج المشترك للمساعدة في تقليل خطر التكرار.",
+            "Similarity Score": "0.8917"
+        }
+    ],
+    "Hindi": [
+        {
+            "Original Term": "recommended_treatment: Adjuvant vaginal brachytherapy with consideration of external beam radiation therapy per NCCN Stage IA grade 3 guidelines",
+            "Service Translation": "सिफ़ारिश की गई: एन. डब्ल्यू.",
+            "OpenAI Translation": "अनुशंसित उपचार: एनसीसीएन स्टेज IA ग्रेड 3 दिशानिर्देशों के अनुसार सहायक योनि ब्रैकीथेरेपी के साथ बाहरी बीम विकिरण चिकित्सा पर विचार।",
+            "Similarity Score": "0.2160"
+        },
+        {
+            "Original Term": "patient_notes: Your surgery removed the uterine cancer, which was limited to the inner half of the uterine muscle and did not spread to your lymph nodes. This is considered an early stage (IA) cancer. Based on guidelines, additional treatment may be recommended to reduce the risk of recurrence, and your care team will discuss options such as radiation therapy. We will work together to plan the next steps for your care.",
+            "Service Translation": "रोगी टिप्पणी करते हैं: आपके ऑपरेशन ने यूटर्यूमिन कैंसर को हटा दिया, जो कि Dortin हार्मोन के आंतरिक आधे तक सीमित था और आपके तंत्रिका नोड्स के लिए फैला नहीं था. यह एक प्रारंभिक चरण (A) कैंसर माना जाता है. निर्देशों के आधार पर, अतिरिक्‍त उपचार की सिफारिश की जा सकती है कि आवृत्ति के जोखिम को कम करने के लिए, और अपनी टीम के बारे में चर्चा की जा सकती है जैसे चिकित्सा विकल्प. हम अगले चरणों के लिए एक साथ काम करेंगे.",
+            "OpenAI Translation": "रोगी नोट्स: आपकी सर्जरी ने गर्भाशय के कैंसर को हटा दिया, जो गर्भाशय की मांसपेशी के अंदरूनी आधे हिस्से तक सीमित था और आपके लसीका ग्रंथियों तक नहीं फैला था। इसे प्रारंभिक चरण (IA) का कैंसर माना जाता है। दिशानिर्देशों के आधार पर, पुनरावृत्ति के जोखिम को कम करने के लिए अतिरिक्त उपचार की सिफारिश की जा सकती है, और आपकी देखभाल टीम विकिरण चिकित्सा जैसे विकल्पों पर चर्चा करेगी। हम आपकी देखभाल के लिए अगले कदमों की योजना बनाने के लिए मिलकर काम करेंगे।",
+            "Similarity Score": "0.8013"
+        },
+        {
+            "Original Term": "recommended_treatment: Observation",
+            "Service Translation": "मनाही की गई (_g):",
+            "OpenAI Translation": "अनुशंसित उपचार: अवलोकन",
+            "Similarity Score": "0.2148"
+        },
+        {
+            "Original Term": "patient_notes: Your report shows a low-grade endometrial cancer confined to the uterine lining with no spread to lymph nodes. No further treatment beyond your surgery is typically necessary. We recommend close monitoring with regular follow-up appointments.",
+            "Service Translation": "रोगी टिप्पणी करता है: आपकी रिपोर्ट एक कम अनियंत्रित अंतात्मक कैंसर को दिखाता है जो कि न तो एमिलिक्स नोड्स तक फैला हुआ है. आपके सर्जरी के बाहर और अधिक उपचार सामान्य रूप से आवश्यक है. हम नियमित रूप से पालन नियुक्‍तियाँ के साथ की जाने की सलाह देता है.",
+            "OpenAI Translation": "रोगी नोट्स: आपकी रिपोर्ट में गर्भाशय की परत तक सीमित निम्न-स्तरीय एंडोमेट्रियल कैंसर दिखाया गया है, जो लिम्फ नोड्स तक नहीं फैला है। आमतौर पर आपकी सर्जरी के अलावा किसी और उपचार की आवश्यकता नहीं होती है। हम नियमित फॉलो-अप अपॉइंटमेंट्स के साथ करीबी निगरानी की सिफारिश करते हैं।",
+            "Similarity Score": "0.8197"
+        },
+        {
+            "Original Term": "recommended_treatment: Observation or vaginal brachytherapy",
+            "Service Translation": "मनाही की गई (_b):",
+            "OpenAI Translation": "अनुशंसित उपचार: अवलोकन या योनि ब्रैकीथेरेपी",
+            "Similarity Score": "0.1739"
+        },
+        {
+            "Original Term": "patient_notes: Your report shows a grade 2 endometrial cancer confined to the upper wall of the uterus with no lymph node spread. You have had surgery to remove the uterus and ovaries with no remaining cancer. Given the low stage, we will monitor you closely and may recommend a small internal vaginal radiation treatment to lower the chance of recurrence. Follow-up visits and imaging will be scheduled regularly.",
+            "Service Translation": "रोगी टिप्पणी करते हैं: आपकी रिपोर्ट एक कक्षा के अंतिक कैंसर को दिखाता है जो कि कोई न्युन नोड के साथ ऊपरी दीवार पर स्थित है. आप के लिए ऑपरेशन किया गया था उपचार बिना बचा कैंसर के. कम मंच दिया, हम आपको ध्यान देना होगा और एक छोटे आंतरिक विकिरण उपचार की सिफ़ारिश कर सकते हैं. नियमित रूप से यात्रा की संभावना का पालन करें और फिर से नियत किया जाएगा.",
+            "OpenAI Translation": "रोगी नोट्स: आपकी रिपोर्ट में ग्रेड 2 एंडोमेट्रियल कैंसर दिखाया गया है जो गर्भाशय की ऊपरी दीवार तक सीमित है और कोई लिम्फ नोड फैलाव नहीं है। आपने गर्भाशय और अंडाशय को हटाने के लिए सर्जरी करवाई है और अब कोई कैंसर शेष नहीं है। निम्न चरण को देखते हुए, हम आपको करीब से मॉनिटर करेंगे और पुनरावृत्ति की संभावना को कम करने के लिए एक छोटी आंतरिक योनि विकिरण उपचार की सिफारिश कर सकते हैं। फॉलो-अप विज़िट और इमेजिंग नियमित रूप से निर्धारित की जाएंगी।",
+            "Similarity Score": "0.7728"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy \\u00b1 EBRT \\u00b1 vaginal brachytherapy",
+            "Service Translation": "सिफ़ारिश की गई: तंत्र चिकित्सा\\u0000: EBRR\\0000खिक अम्ल",
+            "OpenAI Translation": "अनुशंसित उपचार: प्रणालीगत चिकित्सा \\u00b1 ईबीआरटी \\u00b1 योनि ब्रैकीथेरेपी",
+            "Similarity Score": "0.5498"
+        },
+        {
+            "Original Term": "patient_notes: Your surgery showed endometrial cancer that invaded the uterine muscle less than halfway, spread to the cervix and an ovary, but did not involve the lymph nodes. This is classified as stage IIIA. The recommended treatment includes chemotherapy and may include focused radiation to the pelvis or vaginal area. We will guide you through each step and provide support throughout your treatment.",
+            "Service Translation": "डॉक्टर टिप्पणी करते हैं: आपके ऑपरेशन ने अन्तहीन कैंसर को दिखाया जो बीच में से कम रक्‍त - पेशियों में फैल गया, लेकिन इस में डॉक्टरी नोड्स को शामिल नहीं किया गया ।",
+            "OpenAI Translation": "रोगी नोट्स: आपकी सर्जरी में एंडोमेट्रियल कैंसर पाया गया जो गर्भाशय की मांसपेशी में आधे से कम तक फैला था, और यह गर्भाशय ग्रीवा और एक अंडाशय तक फैल गया था, लेकिन लिम्फ नोड्स में शामिल नहीं था। इसे स्टेज IIIA के रूप में वर्गीकृत किया गया है। अनुशंसित उपचार में कीमोथेरेपी शामिल है और इसमें श्रोणि या योनि क्षेत्र पर केंद्रित विकिरण भी शामिल हो सकता है। हम आपको प्रत्येक चरण में मार्गदर्शन करेंगे और आपके उपचार के दौरान समर्थन प्रदान करेंगे।",
+            "Similarity Score": "-0.0234"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy with or without external beam radiation therapy and/or vaginal brachytherapy",
+            "Service Translation": "सिफ़ारिश की गई (_m) : तंत्र चिकित्सा के साथ या बाहरी विकिरण चिकित्सा के बिना",
+            "OpenAI Translation": "अनुशंसित उपचार: बाह्य बीम विकिरण चिकित्सा और/या योनि ब्रैकीथेरेपी के साथ या बिना प्रणालीगत चिकित्सा।",
+            "Similarity Score": "0.7502"
+        },
+        {
+            "Original Term": "patient_notes: The pathology report shows a high-grade uterine serous carcinoma removed by hysterectomy with focal superficial myometrial invasion and no nodal or distant disease. Based on NCCN guidelines for high-risk histology Stage IA uterine serous carcinoma, adjuvant systemic chemotherapy with or without vaginal brachytherapy is recommended to reduce recurrence risk.",
+            "Service Translation": "रोगी टिप्पणी करते हैं: इवैनिस्ट रिपोर्ट एक उच्च-क्रमीय प्रमोदभिकिकी कार को सूचित करता है जिसका अर्थ होता है \"आँग्रेसिक\" या कम करने के लिए केंद्र के साथ अपस्थिक आक्रमण और दूर की बीमारी. NCMICM के आधार पर, NCTSICS TACSICOSIC TACONSICTIC TAC TACONTICTICTIC TASICTIC TATICTIC s, बगैर प्रणाली के बिना shrocacirocirocirocirociocirocirocirocirociociociocirociocs की सिफारिश की जाती है, और बिना प्रणाली की सिफारिश की सिफारिश की जाती है.",
+            "OpenAI Translation": "रोगी के नोट्स: पैथोलॉजी रिपोर्ट में उच्च-ग्रेड गर्भाशय सीरस कार्सिनोमा दिखाया गया है, जिसे हिस्टेरेक्टॉमी द्वारा हटाया गया है, जिसमें फोकल सतही मायोमेट्रियल आक्रमण है और कोई नोडल या दूरस्थ रोग नहीं है। उच्च-जोखिम हिस्टोलॉजी स्टेज IA गर्भाशय सीरस कार्सिनोमा के लिए एनसीसीएन दिशानिर्देशों के आधार पर, पुनरावृत्ति के जोखिम को कम करने के लिए सहायक प्रणालीगत कीमोथेरेपी के साथ या बिना योनि ब्रैकीथेरेपी की सिफारिश की जाती है।",
+            "Similarity Score": "0.5321"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy \\u00b1 EBRT \\u00b1 vaginal brachytherapy",
+            "Service Translation": "सिफ़ारिश की गई: तंत्र चिकित्सा\\u0000: EBRR\\0000खिक अम्ल",
+            "OpenAI Translation": "अनुशंसित उपचार: प्रणालीगत चिकित्सा \\u00b1 ईबीआरटी \\u00b1 योनि ब्रैकीथेरेपी",
+            "Similarity Score": "0.5498"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology shows a high-grade uterine cancer that has reached the outer lining of the uterus but has not spread to lymph nodes. We recommend a combination of chemotherapy and pelvic radiation, which may include internal vaginal radiation, to reduce the risk of the cancer returning.",
+            "Service Translation": "रोगी टिप्पणी करता है: आपका पथिकिक कैंसर एक उच्च संरंजन कैंसर को दिखाता है जो हार्मोन की बाहरी परत तक पहुँच गया है, लेकिन नियोक्खन नोड्स तक फैल गया है. हम की सिफ़ारिश की गई है कि आंतरिक विकिरण भी शामिल हो सकती है, जो कैंसर वापसी के जोखिम को कम करने के लिए हो सकता है.",
+            "OpenAI Translation": "रोगी नोट्स: आपकी पैथोलॉजी रिपोर्ट में उच्च-ग्रेड गर्भाशय कैंसर दिखाया गया है जो गर्भाशय की बाहरी परत तक पहुंच गया है, लेकिन लसीका ग्रंथियों तक नहीं फैला है। हम कीमोथेरेपी और श्रोणि विकिरण के संयोजन की सिफारिश करते हैं, जिसमें आंतरिक योनि विकिरण भी शामिल हो सकता है, ताकि कैंसर के वापस आने के जोखिम को कम किया जा सके।",
+            "Similarity Score": "0.7734"
+        },
+        {
+            "Original Term": "recommended_treatment: Total hysterectomy and bilateral salpingo-oophorectomy with surgical staging followed by carboplatin and paclitaxel chemotherapy plus external beam pelvic radiation and vaginal brachytherapy",
+            "Service Translation": "सिफ़ारिश की गई है: पूरा इंफेक्शन और बाम्प्‌स के साथ माफ़िया और मेक्साल्डा के साथ काम करते हुए।",
+            "OpenAI Translation": "अनुशंसित उपचार: कुल हिस्टेरेक्टॉमी और द्विपक्षीय सैल्पिंगो-ओओफोरेक्टॉमी के साथ शल्य चिकित्सा चरणबद्धता, इसके बाद कार्बोप्लाटिन और पैक्लिटैक्सेल कीमोथेरेपी, साथ ही बाह्य बीम पेल्विक विकिरण और योनि ब्रैकीथेरेपी।",
+            "Similarity Score": "0.2602"
+        },
+        {
+            "Original Term": "patient_notes: This report shows uterine serous carcinoma with spread to pelvic, common iliac, and para-aortic lymph nodes. Your uterus, ovaries, and fallopian tubes were removed, and no cancer was found in the ovaries or omentum. To lower the chance of recurrence, you will receive carboplatin and paclitaxel chemotherapy combined with external beam pelvic radiation and a vaginal brachytherapy boost. We will support you through each step of this treatment plan.",
+            "Service Translation": "रोगी टिप्पणी करता है: यह रिपोर्ट यूरिटिक कारमा को दिखाता है जो कि एरेट्‌स, आमीसी, और इंफेक्शन नोड्स के साथ फैल गई है. आपका रसायन, और Dacentsss हटा दिया गया था, और कोई कैंसर नहीं पाया गया था Goctacs या Gocates. कम करने के अवसर के लिए, आप कार bocratactac और एक बाहरी उपचार के साथ एक बाहरी योजना प्राप्त होगा. हम इस रिपोर्ट में से प्रत्येक अन्य उपचार की योजना का समर्थन करेंगे.",
+            "OpenAI Translation": "रोगी नोट्स: यह रिपोर्ट गर्भाशय के सीरस कार्सिनोमा को दर्शाती है जो श्रोणि, सामान्य इलियाक, और पारा-ऑर्टिक लिम्फ नोड्स तक फैल गया है। आपका गर्भाशय, अंडाशय, और फैलोपियन ट्यूब्स हटा दिए गए थे, और अंडाशय या ओमेंटम में कोई कैंसर नहीं पाया गया। पुनरावृत्ति की संभावना को कम करने के लिए, आपको कार्बोप्लाटिन और पैक्लिटैक्सेल कीमोथेरेपी के साथ बाहरी बीम श्रोणि विकिरण और योनि ब्रैकीथेरेपी बूस्ट मिलेगा। हम इस उपचार योजना के प्रत्येक चरण में आपका समर्थन करेंगे।",
+            "Similarity Score": "0.6413"
+        },
+        {
+            "Original Term": "recommended_treatment: Total hysterectomy with bilateral salpingo-oophorectomy and surgical staging followed by adjuvant carboplatin-paclitaxel chemotherapy and vaginal brachytherapy",
+            "Service Translation": "सिफ़ारिश की गई है: पूरा इंफेक्शन scratocio- mio- miotooy और ऑपरेशन के बाद सहवास - Cugapontactacixy और scraphyyy",
+            "OpenAI Translation": "अनुशंसित उपचार: कुल हिस्टेरेक्टॉमी के साथ द्विपक्षीय सैल्पिंगो-ओओफोरेक्टॉमी और शल्य चिकित्सा चरणबद्धता, उसके बाद सहायक कार्बोप्लाटिन-पैक्लिटैक्सेल कीमोथेरेपी और योनि ब्रैकीथेरेपी।",
+            "Similarity Score": "0.4735"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology report shows a high-grade uterine cancer that has invaded most of the muscle layer but has not spread to your lymph nodes. We recommend removing the uterus and ovaries with surgical staging, followed by chemotherapy and focused radiation to the vaginal area to reduce recurrence risk.",
+            "Service Translation": "रोगी टिप्पणी करता है: आपका पथ चिकित्सा रिपोर्ट एक उच्च-प्रयोगियों कैंसर दिखाता है जो कि बहुत से पेशी परत पर हमला किया गया है, लेकिन आपके तंत्रिकाओं में फैल नहीं गया है. हम ऑपरेशन के साथ उपचार और विकिरण क्षेत्र को कम करने के लिए ध्यान केंद्रित करते हैं.",
+            "OpenAI Translation": "रोगी नोट्स: आपकी पैथोलॉजी रिपोर्ट में उच्च-ग्रेड गर्भाशय कैंसर दिखाया गया है, जो मांसपेशी परत के अधिकांश हिस्से में फैल गया है, लेकिन आपके लसीका ग्रंथियों में नहीं फैला है। हम गर्भाशय और अंडाशय को हटाने की सर्जरी के साथ-साथ सर्जिकल स्टेजिंग की सिफारिश करते हैं, इसके बाद कीमोथेरेपी और योनि क्षेत्र में केंद्रित विकिरण, पुनरावृत्ति के जोखिम को कम करने के लिए।",
+            "Similarity Score": "0.7259"
+        },
+        {
+            "Original Term": "recommended_treatment: Adjuvant pelvic external beam radiation therapy with vaginal brachytherapy and systemic chemotherapy",
+            "Service Translation": "सिफ़ारिश की गई (_m):",
+            "OpenAI Translation": "अनुशंसित उपचार: सहायक श्रोणि बाह्य बीम विकिरण चिकित्सा के साथ योनि ब्रैकीथेरेपी और प्रणालीगत कीमोथेरेपी।",
+            "Similarity Score": "0.1045"
+        },
+        {
+            "Original Term": "patient_notes: Your diagnosis is endometrial cancer that was removed by surgery and found to have invaded more than half of the uterine muscle but did not spread to lymph nodes. To lower the chance of return, we recommend targeted radiation to your pelvis and vagina and a course of chemotherapy. This combined approach is standard for your stage of disease and is aimed at improving long-term outcomes.",
+            "Service Translation": "रोगी टिप्पणी करता है: आपका निदान है कि ऑपरेशन द्वारा निकाला गया था और पाया गया आधा से अधिक में से अधिक से अधिक में प्रवेश किया गया है... ... और Dortininssssssss. वापसी की संभावना को कम करने के लिए, हम अपने विकिरण और इलाज के एक पाठ्यक्रम के लिए सुझाव दिया. यह साथ साथ ही आपके रोग के स्तर के मानक के लिए है और आगे बढ़ रहा है अंत में सुधार करने के लिए है.",
+            "OpenAI Translation": "रोगी नोट्स: आपका निदान एंडोमेट्रियल कैंसर है जिसे सर्जरी द्वारा हटा दिया गया था और पाया गया कि यह गर्भाशय की मांसपेशियों के आधे से अधिक हिस्से में फैल गया था, लेकिन लिम्फ नोड्स तक नहीं फैला था। वापसी की संभावना को कम करने के लिए, हम आपके श्रोणि और योनि पर लक्षित विकिरण और कीमोथेरेपी के एक कोर्स की सिफारिश करते हैं। यह संयुक्त दृष्टिकोण आपके रोग के चरण के लिए मानक है और दीर्घकालिक परिणामों में सुधार करने के उद्देश्य से है।",
+            "Similarity Score": "0.6783"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy plus external beam pelvic radiotherapy and vaginal brachytherapy",
+            "Service Translation": "सिफ़ारिश की गई (_m)",
+            "OpenAI Translation": "अनुशंसित उपचार: प्रणालीगत चिकित्सा के साथ बाह्य बीम श्रोणि विकिरण चिकित्सा और योनि ब्रैकीथेरेपी।",
+            "Similarity Score": "0.0796"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology shows a high-grade uterine cancer that has spread to lymph nodes. The cancer invaded less than half of the uterine muscle but metastasized to several lymph nodes. The recommended plan includes chemotherapy along with targeted radiation to the pelvis and possibly a small internal radiation treatment. Your care team will discuss this combined approach to help reduce the risk of recurrence.",
+            "Service Translation": "रोगी टिप्पणी करता है: आपका पथ चिकित्सा कैंसर दिखाता है कि एक उच्च-प्रयोगी कैंसर है जो रसायन नोड्स तक फैल गया है. कैंसर ने आधे से कम से कम डीस्टोइनों पर हमला किया लेकिन कई रसायनों को शामिल किया. सिफ़ारिश की गई योजना में एस्टेंस और संभवतः एक छोटे से आंतरिक विकिरण के साथ शामिल है. आपकी टीम इस बात पर विचार करेगी कि मदद करने के लिए मदद का जोखिम कम हो जाएगा.",
+            "OpenAI Translation": "रोगी नोट्स: आपकी पैथोलॉजी रिपोर्ट में उच्च-ग्रेड गर्भाशय कैंसर दिखाया गया है जो लिम्फ नोड्स तक फैल गया है। कैंसर ने गर्भाशय की मांसपेशी के आधे से कम हिस्से पर आक्रमण किया है, लेकिन यह कई लिम्फ नोड्स तक फैल गया है। अनुशंसित योजना में कीमोथेरेपी के साथ-साथ श्रोणि क्षेत्र पर लक्षित विकिरण और संभवतः एक छोटा आंतरिक विकिरण उपचार शामिल है। आपकी देखभाल टीम इस संयुक्त दृष्टिकोण पर चर्चा करेगी ताकि पुनरावृत्ति के जोखिम को कम किया जा सके।",
+            "Similarity Score": "0.7863"
+        }
+    ],
+    "Chinese": [
+        {
+            "Original Term": "recommended_treatment: Adjuvant vaginal brachytherapy with consideration of external beam radiation therapy per NCCN Stage IA grade 3 guidelines",
+            "Service Translation": "建议-处理:根据NCNCN 3级IA级准则,考虑外部波束辐射治疗的Adjuvant阴道近距离疗法",
+            "OpenAI Translation": "推荐治疗：根据NCCN IA期3级指南，建议进行辅助阴道近距离放射治疗，并考虑外部束放射治疗。",
+            "Similarity Score": "0.9327"
+        },
+        {
+            "Original Term": "patient_notes: Your surgery removed the uterine cancer, which was limited to the inner half of the uterine muscle and did not spread to your lymph nodes. This is considered an early stage (IA) cancer. Based on guidelines, additional treatment may be recommended to reduce the risk of recurrence, and your care team will discuss options such as radiation therapy. We will work together to plan the next steps for your care.",
+            "Service Translation": "患者注意: 您的手术移除了子宫癌, 子宫癌仅限于子宫肌肉的内部, 并且没有传播到淋巴结。 这被认为是早期的癌症( IA ) 。 根据指导方针, 可以建议额外的治疗来降低重犯的风险, 您的护理团队将讨论辐射治疗等选项。 我们将合作规划您的下一步护理措施 。",
+            "OpenAI Translation": "患者记录：您的手术切除了子宫癌，癌症仅限于子宫肌层的内半部分，并未扩散到淋巴结。这被认为是早期（IA期）癌症。根据指南，可能会建议进行额外的治疗以降低复发风险，您的护理团队将讨论诸如放射治疗等选项。我们将共同制定您的护理下一步计划。",
+            "Similarity Score": "0.9610"
+        },
+        {
+            "Original Term": "recommended_treatment: Observation",
+            "Service Translation": "建议_ 虐待的建议:观察和观察",
+            "OpenAI Translation": "推荐治疗：观察",
+            "Similarity Score": "0.6390"
+        },
+        {
+            "Original Term": "patient_notes: Your report shows a low-grade endometrial cancer confined to the uterine lining with no spread to lymph nodes. No further treatment beyond your surgery is typically necessary. We recommend close monitoring with regular follow-up appointments.",
+            "Service Translation": "患者注:您的报告显示一种低等级的子宫内颈癌,没有传播到淋巴结。除了手术外,通常不需要进一步治疗。我们建议通过定期后续预约进行密切监控。",
+            "OpenAI Translation": "患者记录：您的报告显示为低级别子宫内膜癌，局限于子宫内膜，没有扩散到淋巴结。通常情况下，除了手术外不需要进一步治疗。我们建议定期随访进行密切监测。",
+            "Similarity Score": "0.9611"
+        },
+        {
+            "Original Term": "recommended_treatment: Observation or vaginal brachytherapy",
+            "Service Translation": "建议的治疗:观察或阴道近视疗法",
+            "OpenAI Translation": "推荐治疗：观察或阴道近距离放射治疗",
+            "Similarity Score": "0.8776"
+        },
+        {
+            "Original Term": "patient_notes: Your report shows a grade 2 endometrial cancer confined to the upper wall of the uterus with no lymph node spread. You have had surgery to remove the uterus and ovaries with no remaining cancer. Given the low stage, we will monitor you closely and may recommend a small internal vaginal radiation treatment to lower the chance of recurrence. Follow-up visits and imaging will be scheduled regularly.",
+            "Service Translation": "患者注意: 您的报告显示, 2 年级的子宫内癌被限制在子宫上墙上, 没有淋巴结传播。 您已经动过手术, 移除子宫和卵巢, 没有剩下的癌症。 鉴于这个低级, 我们将密切监视您, 并可能建议使用小量的阴道辐射治疗来降低复发的可能性 。 后续访问和图像将定期进行 。",
+            "OpenAI Translation": "患者记录：您的报告显示为2级子宫内膜癌，局限于子宫上壁，未扩散至淋巴结。您已接受手术切除子宫和卵巢，未发现残留癌症。鉴于癌症分期较低，我们将密切监测您的情况，并可能建议进行小剂量的阴道内放射治疗以降低复发的可能性。我们将定期安排随访和影像检查。",
+            "Similarity Score": "0.9169"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy \\u00b1 EBRT \\u00b1 vaginal brachytherapy",
+            "Service Translation": "建议的治疗:系统治疗 = u00b1EBRT = u00b1阴道短道疗法",
+            "OpenAI Translation": "推荐治疗：全身治疗 ± 外部放射治疗（EBRT） ± 阴道近距离放射治疗",
+            "Similarity Score": "0.7346"
+        },
+        {
+            "Original Term": "patient_notes: Your surgery showed endometrial cancer that invaded the uterine muscle less than halfway, spread to the cervix and an ovary, but did not involve the lymph nodes. This is classified as stage IIIA. The recommended treatment includes chemotherapy and may include focused radiation to the pelvis or vaginal area. We will guide you through each step and provide support throughout your treatment.",
+            "Service Translation": "病人注:你的手术显示宫颈肌肉中程程程外的内脏癌,这种癌症扩散到子宫颈和卵巢,但没有涉及淋巴结。这被归类为三级A。建议的治疗包括化疗,可能包括对骨盆或阴道的集中辐射。我们将指导你走每一步,在治疗过程中提供支持。",
+            "OpenAI Translation": "患者记录：您的手术显示子宫内膜癌侵入子宫肌肉不到一半，扩散至宫颈和一个卵巢，但未涉及淋巴结。这被归类为IIIA期。建议的治疗包括化疗，并可能包括对骨盆或阴道区域的定向放疗。我们将指导您完成每一步，并在整个治疗过程中提供支持。",
+            "Similarity Score": "0.9180"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy with or without external beam radiation therapy and/or vaginal brachytherapy",
+            "Service Translation": "建议的治疗:有或无外部波束辐射疗法和/或阴道短膜疗法的系统疗法",
+            "OpenAI Translation": "推荐治疗：系统治疗，可能结合或不结合外部放射治疗和/或阴道近距离放射治疗。",
+            "Similarity Score": "0.9165"
+        },
+        {
+            "Original Term": "patient_notes: The pathology report shows a high-grade uterine serous carcinoma removed by hysterectomy with focal superficial myometrial invasion and no nodal or distant disease. Based on NCCN guidelines for high-risk histology Stage IA uterine serous carcinoma, adjuvant systemic chemotherapy with or without vaginal brachytherapy is recommended to reduce recurrence risk.",
+            "Service Translation": "患者注解:病理学报告显示,子宫癌癌是一种高等级的子宫癌癌,通过子宫切除而去除,其焦点是表面的表面近距离入侵,没有节点或遥远的疾病。 根据NCCN关于高风险肿瘤学的指南,IA子宫癌癌,建议采用有阴道环切疗法或没有阴道环切疗法的辅助系统化疗,以减少复发风险。",
+            "OpenAI Translation": "病历记录：病理报告显示，通过子宫切除术切除的高级别子宫浆液性癌伴有局部浅表子宫肌层浸润，无淋巴结或远处疾病。根据NCCN高危组织学IA期子宫浆液性癌的指南，建议进行辅助全身化疗，可能结合或不结合阴道近距离放疗，以降低复发风险。",
+            "Similarity Score": "0.8452"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy \\u00b1 EBRT \\u00b1 vaginal brachytherapy",
+            "Service Translation": "建议的治疗:系统治疗 = u00b1EBRT = u00b1阴道短道疗法",
+            "OpenAI Translation": "推荐治疗：全身治疗 ± 外部放射治疗（EBRT） ± 阴道近距离放射治疗",
+            "Similarity Score": "0.7346"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology shows a high-grade uterine cancer that has reached the outer lining of the uterus but has not spread to lymph nodes. We recommend a combination of chemotherapy and pelvic radiation, which may include internal vaginal radiation, to reduce the risk of the cancer returning.",
+            "Service Translation": "患者注:你的病理学显示,子宫癌已经到达子宫外衬,但还没有扩散到淋巴结。我们建议将化疗和子宫辐射相结合,其中可能包括阴道辐射,以减少癌症复发的风险。",
+            "OpenAI Translation": "病历记录：您的病理显示为高级别子宫癌，已扩散至子宫外层，但尚未扩散至淋巴结。我们建议采用化疗和盆腔放疗的组合治疗方案，其中可能包括阴道内放疗，以降低癌症复发的风险。",
+            "Similarity Score": "0.8789"
+        },
+        {
+            "Original Term": "recommended_treatment: Total hysterectomy and bilateral salpingo-oophorectomy with surgical staging followed by carboplatin and paclitaxel chemotherapy plus external beam pelvic radiation and vaginal brachytherapy",
+            "Service Translation": "建议的治疗:全面子宫切除和双边的沙丁-奥眼切除,并进行外科手术,然后是卡波白素和帕利塔克斯化疗,加上外波束骨盆辐射和阴道环切疗法。",
+            "OpenAI Translation": "推荐治疗方案：全子宫切除术和双侧输卵管卵巢切除术，伴随手术分期，随后进行卡铂和紫杉醇化疗，加上外照射盆腔放疗和阴道近距离放疗。",
+            "Similarity Score": "0.7691"
+        },
+        {
+            "Original Term": "patient_notes: This report shows uterine serous carcinoma with spread to pelvic, common iliac, and para-aortic lymph nodes. Your uterus, ovaries, and fallopian tubes were removed, and no cancer was found in the ovaries or omentum. To lower the chance of recurrence, you will receive carboplatin and paclitaxel chemotherapy combined with external beam pelvic radiation and a vaginal brachytherapy boost. We will support you through each step of this treatment plan.",
+            "Service Translation": "患者注:本报告显示了子宫癌,其传播到骨盆、常见子宫和半亚性淋巴结。你的子宫、卵巢和输卵管被移除,卵巢或卵巢中没有发现癌症。为了降低复发机会,你将接受碳白素和帕利塔克斯化疗,加上外生子子子宫辐射和阴道短膜疗法助推。我们将支持你的治疗计划的每一步。",
+            "OpenAI Translation": "患者记录：该报告显示子宫浆液性癌已扩散至盆腔、髂总和腹主动脉旁淋巴结。您的子宫、卵巢和输卵管已被切除，未在卵巢或大网膜中发现癌症。为了降低复发的几率，您将接受卡铂和紫杉醇化疗，结合外照射盆腔放疗和阴道近距离放疗加强。我们将在治疗计划的每一步中支持您。",
+            "Similarity Score": "0.8706"
+        },
+        {
+            "Original Term": "recommended_treatment: Total hysterectomy with bilateral salpingo-oophorectomy and surgical staging followed by adjuvant carboplatin-paclitaxel chemotherapy and vaginal brachytherapy",
+            "Service Translation": "建议的治疗:全面子宫切除,同时进行双边的血清-眼科切除和外科手术,随后进行临时的卡博白素-帕利塔克斯化疗和阴道环切疗法",
+            "OpenAI Translation": "推荐治疗方案：全子宫切除术联合双侧输卵管卵巢切除术及手术分期，随后进行辅助卡铂-紫杉醇化疗和阴道近距离放疗。",
+            "Similarity Score": "0.8695"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology report shows a high-grade uterine cancer that has invaded most of the muscle layer but has not spread to your lymph nodes. We recommend removing the uterus and ovaries with surgical staging, followed by chemotherapy and focused radiation to the vaginal area to reduce recurrence risk.",
+            "Service Translation": "患者注:你的病理学报告显示,子宫癌是一种高等级的子宫癌,它侵入了大部分肌肉层,但没有扩散到淋巴结。我们建议通过外科手术,除去子宫和卵巢,然后进行化疗,对阴道进行有重点的辐射,以减少复发风险。",
+            "OpenAI Translation": "病历记录：您的病理报告显示为高级别子宫癌，已侵入大部分肌层，但尚未扩散至淋巴结。我们建议进行子宫和卵巢切除术并进行手术分期，随后进行化疗和针对阴道区域的局部放射治疗，以降低复发风险。",
+            "Similarity Score": "0.9193"
+        },
+        {
+            "Original Term": "recommended_treatment: Adjuvant pelvic external beam radiation therapy with vaginal brachytherapy and systemic chemotherapy",
+            "Service Translation": "建议的治疗:Adjuvant骨盆外波束辐射疗法,包括阴道近效疗法和系统性化疗",
+            "OpenAI Translation": "推荐治疗：辅助盆腔外照射放射治疗联合阴道近距离放射治疗和全身化疗。",
+            "Similarity Score": "0.9145"
+        },
+        {
+            "Original Term": "patient_notes: Your diagnosis is endometrial cancer that was removed by surgery and found to have invaded more than half of the uterine muscle but did not spread to lymph nodes. To lower the chance of return, we recommend targeted radiation to your pelvis and vagina and a course of chemotherapy. This combined approach is standard for your stage of disease and is aimed at improving long-term outcomes.",
+            "Service Translation": "患者注意: 您的诊断是外科手术切除的宫颈癌, 并被发现侵袭了一半以上的子宫肌肉, 但没有扩散到淋巴结。 为了降低返回的可能性, 我们建议对您的骨盆和阴道进行定向辐射, 并进行化疗。 这种结合方法对于您的疾病阶段来说是标准的, 目的是改善长期效果 。",
+            "OpenAI Translation": "患者记录：您的诊断是子宫内膜癌，已通过手术切除，发现其侵入了超过一半的子宫肌层，但未扩散至淋巴结。为了降低复发的可能性，我们建议对您的骨盆和阴道进行靶向放疗，并进行一个疗程的化疗。这种综合治疗方法是针对您疾病阶段的标准方案，旨在改善长期预后。",
+            "Similarity Score": "0.9481"
+        },
+        {
+            "Original Term": "recommended_treatment: Systemic therapy plus external beam pelvic radiotherapy and vaginal brachytherapy",
+            "Service Translation": "建议的治疗:系统疗法加上外部波束骨盆放射疗法和阴道短膜疗法",
+            "OpenAI Translation": "推荐治疗：全身治疗加外照射盆腔放疗和阴道近距离放疗。",
+            "Similarity Score": "0.8591"
+        },
+        {
+            "Original Term": "patient_notes: Your pathology shows a high-grade uterine cancer that has spread to lymph nodes. The cancer invaded less than half of the uterine muscle but metastasized to several lymph nodes. The recommended plan includes chemotherapy along with targeted radiation to the pelvis and possibly a small internal radiation treatment. Your care team will discuss this combined approach to help reduce the risk of recurrence.",
+            "Service Translation": "患者注: 您的病理学显示了一种已蔓延到淋巴结的高等级子宫癌。 癌症侵袭了不到一半的子宫肌肉,但转移到了几个淋巴结。 推荐的计划包括化疗,以及骨盆定向辐射和可能的小型内部辐射治疗。 您的护理团队将讨论这一综合方法, 以帮助降低复发风险 。",
+            "OpenAI Translation": "患者记录：您的病理结果显示为高级别子宫癌，并已扩散至淋巴结。癌症侵入了不到一半的子宫肌层，但已转移至多个淋巴结。建议的治疗方案包括化疗以及针对骨盆的靶向放疗，可能还包括小剂量的内放射治疗。您的护理团队将讨论这种综合方法，以帮助降低复发风险。",
+            "Similarity Score": "0.9524"
+        }
+    ]
+}
