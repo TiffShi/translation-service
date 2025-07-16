@@ -8,13 +8,16 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from transformers import pipeline
 import logging
+import torch
+import time 
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 #--- Pydantic models for data validation ---
 #these classes define the expected format for API's input and output
 #FastAPI uses them to automatically validate requests, parse data, and generate documentation
-
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+torch.set_num_threads(1)
 #defines the structure for a POST request to /translate
 class TranslationRequest(BaseModel):
     text: str = Field(..., min_length=1, description="The text to be translated")
@@ -63,7 +66,7 @@ def get_translation_pipeline(target_language: str):
         try:
             translator = pipeline('translation', model=model_name)
 
-            model_cache[cache_key] = translator 
+            model_cache[cache_key] = translator
             logger.info(f"Model {cache_key} loaded and cached successfully")
             return translator, None
         #keep for now, but might not be needed later -> negative cacheing
@@ -100,30 +103,75 @@ RESULTS_CACHE_PREFIX = "translation_result:"
 #runs continuously in a background thread to process jobs
 def translation_worker():
     if not redis_client: return
+    
+    BATCH_SIZE = 8
+    BATCH_TIMEOUT = 0.1
+
     while True:
-        #waits for job to appear in queue
-        _, task_json = redis_client.blpop(REQUEST_QUEUE_KEY)
-        task = json.loads(task_json) #parse the job data
-        task_id = task['id']
-        result_key = f"{RESULTS_CACHE_PREFIX}{task_id}"
-        try:
-            translator_pipeline, error = get_translation_pipeline(task['lang'])
+        jobs_to_process = []
 
-            if translator_pipeline:
-                result = translator_pipeline(task['text'])
-                translated_text = result[0]['translation_text']
-                status = 'completed'
-            else:
-                translated_text = error or "An unknown error occurred during model loading."
-                status = 'failed'
-        except Exception as e:
-            logger.error(f"Error translating text for task {task_id}: {e}")
-            translated_text = "An unexpected error occurred during translation."
-            status = 'failed'
+        while len(jobs_to_process) < BATCH_SIZE:
+            try:
+                task_json = redis_client.rpop(REQUEST_QUEUE_KEY)
+                if task_json:
+                    jobs_to_process.append(json.loads(task_json))
+                else:
+                    #if queue is empty
+                    break
+            except Exception as e:
+                logger.error(f"Error popping job from Redis: {e}")
+                break
 
-        #store final result back in Redis
-        final_payload = json.dumps({'status': status, 'result': translated_text})
-        redis_client.set(result_key, final_payload)
+        if jobs_to_process:
+            logger.info(f"Processing a batch of {len(jobs_to_process)} jobs.")
+            #group by languages
+            #we can only batch translate texts that are for the same language model
+            grouped_by_lang = {}
+            for job in jobs_to_process:
+                lang = job['lang']
+                if lang not in grouped_by_lang:
+                    grouped_by_lang[lang] = []
+                grouped_by_lang[lang].append(job)
+
+            #process each language group as a batch
+            for lang, jobs in grouped_by_lang.items():
+                translator_pipeline, error = get_translation_pipeline(lang)
+                if translator_pipeline:
+                    # Create a list of just the text sentences to be translated.
+                    texts = [job['text'] for job in jobs]
+                    try:
+                        start_time = time.perf_counter()
+                        # Translate the entire batch in one single, efficient call!
+                        translated_results = translator_pipeline(texts)
+            
+                        duration = time.perf_counter() - start_time
+                        logger.info(f"Translated batch for {lang} ({len(jobs)} jobs) in {duration:.4f} seconds.")
+            
+                        # Now, map the results back to their original jobs.
+                        for i, job in enumerate(jobs):
+                            job['status'] = 'completed'
+                            job['result'] = translated_results[i]['translation_text']
+                    except Exception as e:
+                        logger.error(f"Error during batch translation for language {lang}: {e}")
+                        for job in jobs:
+                            job['status'] = 'failed'
+                            job['result'] = "Error during batch processing."
+                else:
+                    # If the model failed to load, mark all jobs for this language as failed.
+                    for job in jobs:
+                        job['status'] = 'failed'
+                        job['result'] = error
+
+            # --- Step 4: Save all results back to Redis ---
+            with redis_client.pipeline() as pipe:
+                for job in jobs_to_process:
+                    result_key = f"{RESULTS_CACHE_PREFIX}{job['id']}"
+                    final_payload = json.dumps({'status': job['status'], 'result': job['result']})
+                    redis_client.set(result_key, final_payload)
+                pipe.execute()
+        else:
+            # If the queue was empty, wait a moment before checking again.
+            time.sleep(BATCH_TIMEOUT)
 
 #--- FastAPI Application and Lifespan Manager ---
 #manages startup and shutdown events for the application
@@ -154,7 +202,7 @@ app = FastAPI(
 async def submit_translation(translation_request: TranslationRequest):
     if not redis_client:
         raise HTTPException(status_code=503, detail="Service Unavailable: Cannot Connect to Redis.")
-    
+
     #generate unique ID for this specific request
     request_id = str(uuid.uuid4())
 
