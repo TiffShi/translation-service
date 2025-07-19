@@ -4,24 +4,33 @@ import json
 from threading import Thread, Lock
 from contextlib import asynccontextmanager
 import redis
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Response
 from pydantic import BaseModel, Field
 from transformers import pipeline
 import logging
 import torch
-import time 
+import time
+import hashlib
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+#used to control CPU usage
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+torch.set_num_threads(1)
+
 #--- Pydantic models for data validation ---
 #these classes define the expected format for API's input and output
 #FastAPI uses them to automatically validate requests, parse data, and generate documentation
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
-torch.set_num_threads(1)
 #defines the structure for a POST request to /translate
 class TranslationRequest(BaseModel):
     text: str = Field(..., min_length=1, description="The text to be translated")
     target_language: str = Field(..., min_length=1, description="The full name of the target language")
+
+class TranslationResponse(BaseModel):
+    message: str
+    result: str
+    from_cache: bool = True
 
 class JobResponse(BaseModel):
     message: str
@@ -48,6 +57,12 @@ model_cache = {}
 #prevents two requests from loading the same model at the same time
 model_cache_lock = Lock()
 
+#generates a consistent, unique cache key for a translation
+def get_translation_cache_key(text: str, lang: str):
+    key_string = f"{text}:{lang}".encode('utf-8')
+    key_hash = hashlib.sha256(key_string).hexdigest()
+    return f"{TRANSLATION_CACHE_PREFIX}{key_hash}"
+
 #function loads a specific translation model
 def get_translation_pipeline(target_language: str):
     lang_code = LANGUAGE_CODES.get(target_language.lower())
@@ -73,7 +88,6 @@ def get_translation_pipeline(target_language: str):
         except Exception as e:
             error_message = f"Failed to load model {cache_key}: {e}"
             logger.error(error_message)
-            model_cache[cache_key] = None
             return None, error_message
 
 #--- Redis Connection and Background Worker ---
@@ -99,79 +113,97 @@ except redis.exceptions.ConnectionError as e:
 #define redis keys
 REQUEST_QUEUE_KEY = "translation_request_queue"
 RESULTS_CACHE_PREFIX = "translation_result:"
+TRANSLATION_CACHE_PREFIX = "translation_cache:"
 
 #runs continuously in a background thread to process jobs
 def translation_worker():
     if not redis_client: return
-    
+
     BATCH_SIZE = 8
-    BATCH_TIMEOUT = 0.1
+    BATCH_TIMEOUT = 1.0 #seconds
 
     while True:
         jobs_to_process = []
-
         while len(jobs_to_process) < BATCH_SIZE:
             try:
                 task_json = redis_client.rpop(REQUEST_QUEUE_KEY)
-                if task_json:
-                    jobs_to_process.append(json.loads(task_json))
-                else:
-                    #if queue is empty
+                #if queue is empty
+                if not task_json:
                     break
+
+                jobs_to_process.append(json.loads(task_json))
+
             except Exception as e:
                 logger.error(f"Error popping job from Redis: {e}")
                 break
+        
+        if not jobs_to_process:
+            #if the queue was empty, wait a moment before checking again.
+            time.sleep(BATCH_TIMEOUT)
+            continue
 
-        if jobs_to_process:
-            logger.info(f"Processing a batch of {len(jobs_to_process)} jobs.")
-            #group by languages
-            #we can only batch translate texts that are for the same language model
-            grouped_by_lang = {}
-            for job in jobs_to_process:
-                lang = job['lang']
-                if lang not in grouped_by_lang:
-                    grouped_by_lang[lang] = []
-                grouped_by_lang[lang].append(job)
+        logger.info(f"Processing a batch of {len(jobs_to_process)} jobs.")
+        #group by languages
+        #we can only batch translate texts that are for the same language model
+        grouped_by_lang = {}
+        for job in jobs_to_process:
+            lang = job['lang']
+            if lang not in grouped_by_lang:
+                grouped_by_lang[lang] = []
+            grouped_by_lang[lang].append(job)
 
-            #process each language group as a batch
-            for lang, jobs in grouped_by_lang.items():
-                translator_pipeline, error = get_translation_pipeline(lang)
-                if translator_pipeline:
-                    # Create a list of just the text sentences to be translated.
-                    texts = [job['text'] for job in jobs]
-                    try:
-                        start_time = time.perf_counter()
-                        # Translate the entire batch in one single, efficient call!
-                        translated_results = translator_pipeline(texts)
-            
-                        duration = time.perf_counter() - start_time
-                        logger.info(f"Translated batch for {lang} ({len(jobs)} jobs) in {duration:.4f} seconds.")
-            
-                        # Now, map the results back to their original jobs.
-                        for i, job in enumerate(jobs):
-                            job['status'] = 'completed'
-                            job['result'] = translated_results[i]['translation_text']
-                    except Exception as e:
-                        logger.error(f"Error during batch translation for language {lang}: {e}")
-                        for job in jobs:
-                            job['status'] = 'failed'
-                            job['result'] = "Error during batch processing."
-                else:
-                    # If the model failed to load, mark all jobs for this language as failed.
-                    for job in jobs:
-                        job['status'] = 'failed'
-                        job['result'] = error
+        #process each language group as a batch
+        for lang, jobs in grouped_by_lang.items():
+            translator_pipeline, error = get_translation_pipeline(lang)
 
-            # --- Step 4: Save all results back to Redis ---
+            #if the model failed to load, mark all jobs for this language as failed
+            if not translator_pipeline:
+                for job in jobs:
+                    job['status'] = 'failed'
+                    job['result'] = error
+                continue
+
+            try:
+                #create a list of just the text to be translated.
+                texts = [job['text'] for job in jobs]
+
+                start_time = time.perf_counter()
+                #translate the entire batch in one call
+                translated_results = translator_pipeline(texts)
+
+                duration = time.perf_counter() - start_time
+
+                logger.info(f"Translated batch for {lang} ({len(jobs)} jobs) in {duration:.4f} seconds.")
+
+                #map the results back to their original jobs.
+                for i, job in enumerate(jobs):
+                    job['status'] = 'completed'
+                    job['result'] = translated_results[i]['translation_text']
+            except Exception as e:
+                logger.error(f"Error during batch translation for language {lang}: {e}")
+                for job in jobs:
+                    job['status'] = 'failed'
+                    job['result'] = "Error during batch processing."
+
+        # --- Save all results back to Redis ---
+        try:
             with redis_client.pipeline() as pipe:
                 for job in jobs_to_process:
+                    #save to translation cache
+                    if job.get('status') == 'completed':
+                        final_cache_key = get_translation_cache_key(job['text'], job['lang'])
+                        #ex = how many seconds the cache will keep the translation
+                        pipe.set(final_cache_key, job['result'], ex=300)
+                    
+                    #save job status for client pickup
                     result_key = f"{RESULTS_CACHE_PREFIX}{job['id']}"
                     final_payload = json.dumps({'status': job['status'], 'result': job['result']})
-                    redis_client.set(result_key, final_payload)
+                    pipe.set(result_key, final_payload)
+                
                 pipe.execute()
-        else:
-            # If the queue was empty, wait a moment before checking again.
-            time.sleep(BATCH_TIMEOUT)
+            logger.info(f"Successfully saved results for {len(jobs_to_process)} jobs to Redis.")
+        except Exception as e:
+            logger.error(f"Error saving results to Redis: {e}")
 
 #--- FastAPI Application and Lifespan Manager ---
 #manages startup and shutdown events for the application
@@ -190,7 +222,7 @@ async def lifespan(app: FastAPI):
 #create the main FastAPI
 app = FastAPI(
     title="Efficient Asynchronous Translation Service",
-    description="An API for high-performance translation using optimized Hugging Face models.",
+    description="An API for high-performance translation using Helsinki-NLP MarianMT Models.",
     version="4.0.0",
     lifespan=lifespan
 )
@@ -198,11 +230,24 @@ app = FastAPI(
 #--- API Endpoints ---
 
 #accepts a translation request and queues it for a background worker
-@app.post('/translate', response_model=JobResponse, status_code=202)
-async def submit_translation(translation_request: TranslationRequest):
+@app.post('/translate', response_model=JobResponse | TranslationResponse)
+async def submit_translation(translation_request: TranslationRequest, response: Response):
     if not redis_client:
         raise HTTPException(status_code=503, detail="Service Unavailable: Cannot Connect to Redis.")
 
+    #check for a cached translation
+    final_cache_key = get_translation_cache_key(translation_request.text, translation_request.target_language)
+
+    cached_result = redis_client.get(final_cache_key)
+
+    if cached_result:
+        logger.info(f"Cache hit for key: {final_cache_key}")
+        return TranslationResponse(
+            message="Translation retrived from cache.",
+            result=cached_result
+        )
+
+    logger.info(f"Cache miss for key: {final_cache_key}. Submitting new job.")
     #generate unique ID for this specific request
     request_id = str(uuid.uuid4())
 
@@ -222,6 +267,7 @@ async def submit_translation(translation_request: TranslationRequest):
     #push the job to the worker queue
     #rpush adds job to the end of the list -> creating a queue
     redis_client.rpush(REQUEST_QUEUE_KEY, json.dumps(task))
+    response.status_code = 202
     return JobResponse(message="Request accepted.", request_id=request_id)
 
 #Retrieves the result of a translation job by its ID
@@ -229,12 +275,16 @@ async def submit_translation(translation_request: TranslationRequest):
 async def get_translation_result(request_id: str):
     if not redis_client:
         raise HTTPException(status_code=503, detail="Service Unavailable: Cannot connect to Redis.")
+
     result_key = f"{RESULTS_CACHE_PREFIX}{request_id}"
     result_json = redis_client.get(result_key)
+
     if not result_json:
         raise HTTPException(status_code=404, detail="Request ID not found.")
+
     result = json.loads(result_json)
-    # To save space, we delete the result from the cache after it's been retrieved
+
+    #to save space, we delete the result from the cache after it's been retrieved
     if result.get('status') in ['completed', 'failed']:
         redis_client.delete(result_key)
     return Result(**result)
@@ -244,9 +294,11 @@ async def get_translation_result(request_id: str):
 @app.get('/health', tags=['Monitoring'])
 async def health_check():
     redis_status = 'unavailable'
+
     #check connection of redis_client
     if redis_client and redis_client.ping():
         redis_status = 'ok'
     else:
         raise HTTPException(status_code=503, detail="Service Unavailable: Cannot connect to Redis.")
+
     return {"api_status": "ok", "redis_status": "ok"}

@@ -11,7 +11,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # --- Test Configuration ---
 BASE_URL = "http://localhost:5000"
 #TARGET_LANGUAGES = ["Spanish", "French", "Arabic", "Hindi", "Chinese"]
-TARGET_LANGUAGES = ["Chinese"]
+TARGET_LANGUAGES = ["Spanish"]
 TERMS_TO_TEST = [
     "recommended_treatment: Adjuvant vaginal brachytherapy with consideration of external beam radiation therapy per NCCN Stage IA grade 3 guidelines",
     "patient_notes: Your surgery removed the uterine cancer, which was limited to the inner half of the uterine muscle and did not spread to your lymph nodes. This is considered an early stage (IA) cancer. Based on guidelines, additional treatment may be recommended to reduce the risk of recurrence, and your care team will discuss options such as radiation therapy. We will work together to plan the next steps for your care.",
@@ -35,6 +35,8 @@ TERMS_TO_TEST = [
     "patient_notes: Your pathology shows a high-grade uterine cancer that has spread to lymph nodes. The cancer invaded less than half of the uterine muscle but metastasized to several lymph nodes. The recommended plan includes chemotherapy along with targeted radiation to the pelvis and possibly a small internal radiation treatment. Your care team will discuss this combined approach to help reduce the risk of recurrence."
 ]
 SIMILARITY_THRESHOLD = 0.85
+#default value
+total_duration = 0
 
 # --- OpenAI Setup ---
 openai_api_key = os.environ.get("OPENAI_API_KEY")
@@ -69,7 +71,12 @@ def test_batch(target_language):
     #submit all translation jobs for the current language
     print(f"--- Starting Benchmark for: {target_language.upper()} ---")
     print(f"Submitting {len(TERMS_TO_TEST)} translation requests...")
+    #will only hold jobs we need to poll for (status 202)
     request_map = {}
+    #will hold results we get immediatley from the cache (status 200)
+    completed_results = []
+    start_time = time.time()
+
     for term in TERMS_TO_TEST:
         try:
             submit_response = requests.post (
@@ -77,48 +84,63 @@ def test_batch(target_language):
                 json={"text": term, "target_language": target_language}
             )
             #assert checks if condition is true. If not, test fails
-            assert submit_response.status_code == 202 #check if request accepted
-            request_id = submit_response.json()["request_id"]
-            request_map[request_id] = {"original": term }
+            assert submit_response.status_code in [200, 202] #check if request accepted
+
+            #if it was a new json, add it to map to be polled later
+            if submit_response.status_code == 202:
+                request_id = submit_response.json()["request_id"]
+                request_map[request_id] = {"original": term }
+
+            elif submit_response.status_code == 200:
+                print(f"Cache hit for term: '{term[:30]}'...")
+                completed_results.append({
+                    "original": term,
+                    "status": "completed",
+                    "service_translation": submit_response.json()["result"]
+                })
+
         except requests.exceptions.RequestException as e:
             pytest.fail(f"Failed to submit request for '{term}': {e}")
 
-    print(f"{len(request_map)} jobs for {target_language} submitted successfully.")
+    #poll for results of background jobs
+    if request_map:
+        print(f"{len(request_map)} jobs for {target_language} submitted for background processing.")
+        print("Waiting for all translations to complete...")
+        pending_ids = set(request_map.keys())
+        timeout_seconds = 300
 
-    #poll for the all results
-    print("Waiting for all translations to complete...")
-    start_time = time.time()
+        while pending_ids and (time.time() - start_time) < timeout_seconds:
+            for req_id in list(pending_ids):
+                try:
+                    result_response = requests.get(f"{BASE_URL}/result/{req_id}")
+                    #check if the /result endpoint is working
+                    if result_response.status_code == 200:
+                        result_data = result_response.json()
 
-    pending_ids = set(request_map.keys())
-    timeout_seconds = 300
+                        if result_data.get("status") in ["completed", "failed"]:
+                            request_map[req_id]['status'] = result_data.get("status")
+                            request_map[req_id]['service_translation'] = result_data.get("result")
+                            pending_ids.remove(req_id)
+                except requests.exceptions.RequestException as e:
+                    print(f"Warning: Could not poll for request ID {req_id}: {e}")
 
-    while pending_ids and (time.time() - start_time) < timeout_seconds:
-        for req_id in list(pending_ids):
-            try:
-                result_response = requests.get(f"{BASE_URL}/result/{req_id}")
-                #check if the /result endpoint is working
-                if  result_response.status_code == 200:
-                    result_data = result_response.json()
-                    if result_data.get("status") in ["completed", "failed"]:
-                        request_map[req_id]['status'] = result_data.get("status")
-                        request_map[req_id]['service_translation'] = result_data.get("result")
-                        pending_ids.remove(req_id)
-            except requests.exceptions.RequestException as e:
-                print(f"Warning: Could not poll for request ID {req_id}: {e}")
-
-        if pending_ids:
             time.sleep(1)
+        assert len(pending_ids) == 0, f"Test timed out. {len(pending_ids)} jobs did not complete for {target_language}."
 
     end_time = time.time()
 
     #fetch OpenAI translations and calculate quality scores
     print("All jobs completed.")
     print("Fetching reference translations from OpenAI and calculating quality...")
+    
+    for data in request_map.values():
+        completed_results.append(data)
+
     openai_client = OpenAI(api_key=openai_api_key)
     similarity_scores = []
     current_language_results = []
 
-    for req_id, data in request_map.items():
+    for data in completed_results:
         result_entry = {"Original Term": data.get('original', 'N/A')}
         if data.get('status') == 'completed':
             original_text = data['original']
@@ -144,7 +166,7 @@ def test_batch(target_language):
         current_language_results.append(result_entry)
 
     #read existing json, update it, and write back
-    output_filename = "analysis.json"
+    output_filename = "analysis3.json"
     all_results = {}
 
     #try to load existing results from the file
@@ -161,9 +183,9 @@ def test_batch(target_language):
     with open(output_filename, 'w', encoding='utf-8') as f:
         json.dump(all_results, f, indent=4, ensure_ascii=False)
 
-    total_duration = end_time - start_time
     num_completed = len(request_map)
     num_phrases = len(TERMS_TO_TEST)
+    total_duration = end_time - start_time
 
     print(f"\n--- BATCH REPORT FOR: {target_language.upper()} ---")
     print(f"Total phrases submitted: {num_phrases}")
@@ -177,5 +199,3 @@ def test_batch(target_language):
         print(f"Average Similarity Score: {avg_similarity:.4f}")
     print(f"Detailed results for {target_language} saved to: {output_filename}")
     print("--- END REPORT ---\n")
-
-    assert len(pending_ids) == 0, f"Test timed out. {len(pending_ids)} jobs did not complete for {target_language}."
