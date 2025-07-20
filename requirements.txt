@@ -5,7 +5,6 @@ uvicorn
 redis
 transformers
 sentencepiece
-torch
 sacremoses
 pytest
 requests

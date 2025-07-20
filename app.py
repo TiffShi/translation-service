@@ -12,12 +12,12 @@ import torch
 import time
 import hashlib
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
-
 #used to control CPU usage
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 torch.set_num_threads(1)
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 #--- Pydantic models for data validation ---
 #these classes define the expected format for API's input and output
@@ -211,6 +211,11 @@ def translation_worker():
 async def lifespan(app: FastAPI):
     logger.info("Application startup...")
     if redis_client:
+        logger.info("Pre-loading all supported translation models")
+        for lang_name in LANGUAGE_CODES.keys():
+            get_translation_pipeline(lang_name)
+        logger.info("All models loaded and ready.")
+
         worker_thread = Thread(target=translation_worker, daemon=True)
         worker_thread.start()
         logger.info("Translation worker started.")
@@ -284,9 +289,10 @@ async def get_translation_result(request_id: str):
 
     result = json.loads(result_json)
 
-    #to save space, we delete the result from the cache after it's been retrieved
+    #if job is done, set TTL for 5 minutes
     if result.get('status') in ['completed', 'failed']:
-        redis_client.delete(result_key)
+        redis_client.expire(result_key, 300)
+
     return Result(**result)
 
 #function runs when we access https://localhost:5000/health

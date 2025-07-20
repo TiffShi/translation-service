@@ -12,6 +12,8 @@ services:
       - REDIS_PORT=6379
     depends_on:
       - redis
+    volumes:
+      - huggingface-cache:/home/appuser/.cache/huggingface
 
   #the redis service
   redis:
@@ -27,3 +29,4 @@ services:
 #define a named volume for redis data persistence
 volumes:
   redis_data:
+  huggingface-cache:

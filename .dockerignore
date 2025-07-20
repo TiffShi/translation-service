@@ -1,0 +1,16 @@
+.git
+.gitignore
+
+__pycache__/
+.pytest_cache
+*.pyc
+.venv/
+venv/
+
+# Docker and VS Code
+.dockerignore
+.vscode/
+
+# CRITICAL: Ignore any local model caches
+.cache/
+huggingface-cache/
