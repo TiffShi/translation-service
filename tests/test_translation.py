@@ -9,7 +9,7 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # --- Test Configuration ---
-BASE_URL = "http://localhost:5000"
+BASE_URL = "http://localhost:8005/api"
 #TARGET_LANGUAGES = ["Spanish", "French", "Arabic", "Hindi", "Chinese"]
 TARGET_LANGUAGES = ["Spanish"]
 TERMS_TO_TEST = [
@@ -19,20 +19,20 @@ TERMS_TO_TEST = [
     "patient_notes: Your report shows a low-grade endometrial cancer confined to the uterine lining with no spread to lymph nodes. No further treatment beyond your surgery is typically necessary. We recommend close monitoring with regular follow-up appointments.",
     "recommended_treatment: Observation or vaginal brachytherapy",
     "patient_notes: Your report shows a grade 2 endometrial cancer confined to the upper wall of the uterus with no lymph node spread. You have had surgery to remove the uterus and ovaries with no remaining cancer. Given the low stage, we will monitor you closely and may recommend a small internal vaginal radiation treatment to lower the chance of recurrence. Follow-up visits and imaging will be scheduled regularly.",
-    r"recommended_treatment: Systemic therapy \u00b1 EBRT \u00b1 vaginal brachytherapy",
-    "patient_notes: Your surgery showed endometrial cancer that invaded the uterine muscle less than halfway, spread to the cervix and an ovary, but did not involve the lymph nodes. This is classified as stage IIIA. The recommended treatment includes chemotherapy and may include focused radiation to the pelvis or vaginal area. We will guide you through each step and provide support throughout your treatment.",
-    "recommended_treatment: Systemic therapy with or without external beam radiation therapy and/or vaginal brachytherapy",
-    "patient_notes: The pathology report shows a high-grade uterine serous carcinoma removed by hysterectomy with focal superficial myometrial invasion and no nodal or distant disease. Based on NCCN guidelines for high-risk histology Stage IA uterine serous carcinoma, adjuvant systemic chemotherapy with or without vaginal brachytherapy is recommended to reduce recurrence risk.",
-    r"recommended_treatment: Systemic therapy \u00b1 EBRT \u00b1 vaginal brachytherapy",
-    "patient_notes: Your pathology shows a high-grade uterine cancer that has reached the outer lining of the uterus but has not spread to lymph nodes. We recommend a combination of chemotherapy and pelvic radiation, which may include internal vaginal radiation, to reduce the risk of the cancer returning.",
-    "recommended_treatment: Total hysterectomy and bilateral salpingo-oophorectomy with surgical staging followed by carboplatin and paclitaxel chemotherapy plus external beam pelvic radiation and vaginal brachytherapy",
-    "patient_notes: This report shows uterine serous carcinoma with spread to pelvic, common iliac, and para-aortic lymph nodes. Your uterus, ovaries, and fallopian tubes were removed, and no cancer was found in the ovaries or omentum. To lower the chance of recurrence, you will receive carboplatin and paclitaxel chemotherapy combined with external beam pelvic radiation and a vaginal brachytherapy boost. We will support you through each step of this treatment plan.",
-    "recommended_treatment: Total hysterectomy with bilateral salpingo-oophorectomy and surgical staging followed by adjuvant carboplatin-paclitaxel chemotherapy and vaginal brachytherapy",
-    "patient_notes: Your pathology report shows a high-grade uterine cancer that has invaded most of the muscle layer but has not spread to your lymph nodes. We recommend removing the uterus and ovaries with surgical staging, followed by chemotherapy and focused radiation to the vaginal area to reduce recurrence risk.",
-    "recommended_treatment: Adjuvant pelvic external beam radiation therapy with vaginal brachytherapy and systemic chemotherapy",
-    "patient_notes: Your diagnosis is endometrial cancer that was removed by surgery and found to have invaded more than half of the uterine muscle but did not spread to lymph nodes. To lower the chance of return, we recommend targeted radiation to your pelvis and vagina and a course of chemotherapy. This combined approach is standard for your stage of disease and is aimed at improving long-term outcomes.",
-    "recommended_treatment: Systemic therapy plus external beam pelvic radiotherapy and vaginal brachytherapy",
-    "patient_notes: Your pathology shows a high-grade uterine cancer that has spread to lymph nodes. The cancer invaded less than half of the uterine muscle but metastasized to several lymph nodes. The recommended plan includes chemotherapy along with targeted radiation to the pelvis and possibly a small internal radiation treatment. Your care team will discuss this combined approach to help reduce the risk of recurrence."
+    # r"recommended_treatment: Systemic therapy \u00b1 EBRT \u00b1 vaginal brachytherapy",
+    # "patient_notes: Your surgery showed endometrial cancer that invaded the uterine muscle less than halfway, spread to the cervix and an ovary, but did not involve the lymph nodes. This is classified as stage IIIA. The recommended treatment includes chemotherapy and may include focused radiation to the pelvis or vaginal area. We will guide you through each step and provide support throughout your treatment.",
+    # "recommended_treatment: Systemic therapy with or without external beam radiation therapy and/or vaginal brachytherapy",
+    # "patient_notes: The pathology report shows a high-grade uterine serous carcinoma removed by hysterectomy with focal superficial myometrial invasion and no nodal or distant disease. Based on NCCN guidelines for high-risk histology Stage IA uterine serous carcinoma, adjuvant systemic chemotherapy with or without vaginal brachytherapy is recommended to reduce recurrence risk.",
+    # r"recommended_treatment: Systemic therapy \u00b1 EBRT \u00b1 vaginal brachytherapy",
+    # "patient_notes: Your pathology shows a high-grade uterine cancer that has reached the outer lining of the uterus but has not spread to lymph nodes. We recommend a combination of chemotherapy and pelvic radiation, which may include internal vaginal radiation, to reduce the risk of the cancer returning.",
+    # "recommended_treatment: Total hysterectomy and bilateral salpingo-oophorectomy with surgical staging followed by carboplatin and paclitaxel chemotherapy plus external beam pelvic radiation and vaginal brachytherapy",
+    # "patient_notes: This report shows uterine serous carcinoma with spread to pelvic, common iliac, and para-aortic lymph nodes. Your uterus, ovaries, and fallopian tubes were removed, and no cancer was found in the ovaries or omentum. To lower the chance of recurrence, you will receive carboplatin and paclitaxel chemotherapy combined with external beam pelvic radiation and a vaginal brachytherapy boost. We will support you through each step of this treatment plan.",
+    # "recommended_treatment: Total hysterectomy with bilateral salpingo-oophorectomy and surgical staging followed by adjuvant carboplatin-paclitaxel chemotherapy and vaginal brachytherapy",
+    # "patient_notes: Your pathology report shows a high-grade uterine cancer that has invaded most of the muscle layer but has not spread to your lymph nodes. We recommend removing the uterus and ovaries with surgical staging, followed by chemotherapy and focused radiation to the vaginal area to reduce recurrence risk.",
+    # "recommended_treatment: Adjuvant pelvic external beam radiation therapy with vaginal brachytherapy and systemic chemotherapy",
+    # "patient_notes: Your diagnosis is endometrial cancer that was removed by surgery and found to have invaded more than half of the uterine muscle but did not spread to lymph nodes. To lower the chance of return, we recommend targeted radiation to your pelvis and vagina and a course of chemotherapy. This combined approach is standard for your stage of disease and is aimed at improving long-term outcomes.",
+    # "recommended_treatment: Systemic therapy plus external beam pelvic radiotherapy and vaginal brachytherapy",
+    # "patient_notes: Your pathology shows a high-grade uterine cancer that has spread to lymph nodes. The cancer invaded less than half of the uterine muscle but metastasized to several lymph nodes. The recommended plan includes chemotherapy along with targeted radiation to the pelvis and possibly a small internal radiation treatment. Your care team will discuss this combined approach to help reduce the risk of recurrence."
 ]
 SIMILARITY_THRESHOLD = 0.85
 #default value
@@ -166,7 +166,7 @@ def test_batch(target_language):
         current_language_results.append(result_entry)
 
     #read existing json, update it, and write back
-    output_filename = "analysis3.json"
+    output_filename = "analysis2.json"
     all_results = {}
 
     #try to load existing results from the file

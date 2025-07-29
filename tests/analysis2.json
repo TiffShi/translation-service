@@ -1,0 +1,40 @@
+{
+    "Spanish": [
+        {
+            "Original Term": "recommended_treatment: Adjuvant vaginal brachytherapy with consideration of external beam radiation therapy per NCCN Stage IA grade 3 guidelines",
+            "Service Translation": "Recomendado_tratamiento: Braquiterapia vaginal adyuvante con consideración de radioterapia de haz externo por NCCN Estadio IA guía de grado 3",
+            "OpenAI Translation": "tratamiento_recomendado: Braquiterapia vaginal adyuvante con consideración de radioterapia de haz externo según las pautas de la NCCN para el estadio IA grado 3",
+            "Similarity Score": "0.9702"
+        },
+        {
+            "Original Term": "patient_notes: Your surgery removed the uterine cancer, which was limited to the inner half of the uterine muscle and did not spread to your lymph nodes. This is considered an early stage (IA) cancer. Based on guidelines, additional treatment may be recommended to reduce the risk of recurrence, and your care team will discuss options such as radiation therapy. We will work together to plan the next steps for your care.",
+            "Service Translation": "patient_notes: Su cirugía eliminó el cáncer uterino, que se limitaba a la mitad interna del músculo uterino y no se diseminó a los ganglios linfáticos. Esto se considera un cáncer en estadio temprano (IA). Según las directrices, se puede recomendar un tratamiento adicional para reducir el riesgo de recurrencia, y su equipo de atención discutirá opciones como la radioterapia. Trabajaremos juntos para planificar los próximos pasos para su atención.",
+            "OpenAI Translation": "notas del paciente: Su cirugía eliminó el cáncer de útero, que estaba limitado a la mitad interna del músculo uterino y no se propagó a sus ganglios linfáticos. Esto se considera un cáncer en etapa temprana (IA). Según las pautas, se puede recomendar un tratamiento adicional para reducir el riesgo de recurrencia, y su equipo de atención discutirá opciones como la radioterapia. Trabajaremos juntos para planificar los próximos pasos para su cuidado.",
+            "Similarity Score": "0.9690"
+        },
+        {
+            "Original Term": "recommended_treatment: Observation",
+            "Service Translation": "_tratamiento recomendado: Observación",
+            "OpenAI Translation": "tratamiento_recomendado: Observación",
+            "Similarity Score": "0.7349"
+        },
+        {
+            "Original Term": "patient_notes: Your report shows a low-grade endometrial cancer confined to the uterine lining with no spread to lymph nodes. No further treatment beyond your surgery is typically necessary. We recommend close monitoring with regular follow-up appointments.",
+            "Service Translation": "patient_notes: Su informe muestra un cáncer de endometrio de bajo grado confinado al revestimiento uterino sin diseminación a los ganglios linfáticos. Típicamente no es necesario ningún tratamiento más allá de la cirugía. Recomendamos una monitorización estrecha con consultas regulares de seguimiento.",
+            "OpenAI Translation": "notas del paciente: Su informe muestra un cáncer endometrial de bajo grado confinado al revestimiento uterino sin diseminación a los ganglios linfáticos. Normalmente, no es necesario ningún tratamiento adicional más allá de su cirugía. Recomendamos un seguimiento cercano con citas de control regulares.",
+            "Similarity Score": "0.9671"
+        },
+        {
+            "Original Term": "recommended_treatment: Observation or vaginal brachytherapy",
+            "Service Translation": "Recomendado_tratamiento: Observación o braquiterapia vaginal",
+            "OpenAI Translation": "tratamiento_recomendado: Observación o braquiterapia vaginal",
+            "Similarity Score": "0.9611"
+        },
+        {
+            "Original Term": "patient_notes: Your report shows a grade 2 endometrial cancer confined to the upper wall of the uterus with no lymph node spread. You have had surgery to remove the uterus and ovaries with no remaining cancer. Given the low stage, we will monitor you closely and may recommend a small internal vaginal radiation treatment to lower the chance of recurrence. Follow-up visits and imaging will be scheduled regularly.",
+            "Service Translation": "patient_notes: Su informe muestra un cáncer de endometrio de grado 2 confinado a la pared superior del útero sin diseminación de ganglios linfáticos. Usted ha sido sometido a una cirugía para extirpar el útero y los ovarios sin cáncer restante. Dado el estadio bajo, lo vigilaremos de cerca y le recomendaremos un pequeño tratamiento de radiación vaginal interna para reducir la probabilidad de recurrencia. Las visitas de seguimiento y las imágenes se programarán regularmente.",
+            "OpenAI Translation": "notas del paciente: Su informe muestra un cáncer de endometrio de grado 2 confinado a la pared superior del útero sin propagación a los ganglios linfáticos. Se ha sometido a una cirugía para extirpar el útero y los ovarios sin que quede cáncer residual. Dado el bajo estadio, lo monitorizaremos de cerca y es posible que recomendemos un pequeño tratamiento de radiación vaginal interna para reducir la posibilidad de recurrencia. Las visitas de seguimiento y las pruebas de imagen se programarán regularmente.",
+            "Similarity Score": "0.9846"
+        }
+    ]
+}

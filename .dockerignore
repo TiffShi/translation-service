@@ -14,3 +14,5 @@ venv/
 # CRITICAL: Ignore any local model caches
 .cache/
 huggingface-cache/
+
+Dockerfile

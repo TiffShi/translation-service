@@ -1,27 +1,40 @@
 services:
-  #python flash application service
+  # The Web Server Service (handles API requests)
   app:
     #build image from the dockerfile in the current directory
     build: .
-    container_name: translator_app
+    container_name: translation_app
     #map port 5000 on the host to port 5000 in the container
     ports:
-      - "5000:5000"
+      - "8005:5000"
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+    # - AUTH_SERVICE_URL=http://auth-service:8001 
     depends_on:
       - redis
     volumes:
+      - .:/app # Add this line to see code changes without rebuilding
+      - huggingface-cache:/home/appuser/.cache/huggingface
+
+  # The Background Worker Service
+  worker:
+    build: .
+    container_name: translator_worker
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    entrypoint: python worker.py 
+    depends_on:
+      - redis
+    volumes:
+      - .:/app # Add this line to see code changes without rebuilding
       - huggingface-cache:/home/appuser/.cache/huggingface
 
   #the redis service
   redis:
     image: "redis:alpine"
     container_name: redis_cache
-    #exposes redis port (optional, but useful for debugging with a local client)
-    ports:
-      - "6379:6379"
     #persists redis data across container restarts
     volumes:
       - redis_data:/data
