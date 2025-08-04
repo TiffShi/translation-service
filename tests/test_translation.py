@@ -9,9 +9,8 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # --- Test Configuration ---
-BASE_URL = "http://localhost:5000"
-#TARGET_LANGUAGES = ["Spanish", "French", "Arabic", "Hindi", "Chinese"]
-TARGET_LANGUAGES = ["Spanish"]
+BASE_URL = "http://localhost:5000/api"
+TARGET_LANGUAGES = ["Spanish", "French", "Arabic", "Hindi", "Chinese"]
 TERMS_TO_TEST = [
     "recommended_treatment: Adjuvant vaginal brachytherapy with consideration of external beam radiation therapy per NCCN Stage IA grade 3 guidelines",
     "patient_notes: Your surgery removed the uterine cancer, which was limited to the inner half of the uterine muscle and did not spread to your lymph nodes. This is considered an early stage (IA) cancer. Based on guidelines, additional treatment may be recommended to reduce the risk of recurrence, and your care team will discuss options such as radiation therapy. We will work together to plan the next steps for your care.",
@@ -165,8 +164,11 @@ def test_batch(target_language):
 
         current_language_results.append(result_entry)
 
+    ANALYSIS_DIR = os.path.join("tests", "analysis")
+    os.makedirs(ANALYSIS_DIR, exist_ok=True)
     #read existing json, update it, and write back
-    output_filename = "analysis3.json"
+    output_filename = os.path.join(ANALYSIS_DIR, "analysis1.json")
+
     all_results = {}
 
     #try to load existing results from the file
