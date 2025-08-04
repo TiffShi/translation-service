@@ -2,6 +2,13 @@ import os
 import httpx
 from fastapi import Request, HTTPException, status
 
+"""
+this is a production-ready example of a token verification function
+it connects to a central authentication service to validate a JWT token
+to use this, rename this file to 'auth.py' and ensure the
+AUTH_SERVICE_URL environment variable is set correctly
+"""
+
 #set this as an environment variable in Docker container
 #url of the central authentication service from healthcare-app project
 AUTH_SERVICE_URL = os.environ.get("AUTH_SERVICE_URL")

@@ -6,15 +6,16 @@ services:
     container_name: translation_app
     #map port 5000 on the host to port 5000 in the container
     ports:
-      - "8005:5000"
+      - "5000:5000"
     environment:
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-    # - AUTH_SERVICE_URL=http://auth-service:8001 
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      # - AUTH_SERVICE_URL=${AUTH_SERVICE_URL}
+      - SERVICE_TOKEN_SECRET=${SERVICE_TOKEN_SECRET}
+    entrypoint: /app/entrypoint.sh
     depends_on:
       - redis
     volumes:
-      - .:/app # Add this line to see code changes without rebuilding
       - huggingface-cache:/home/appuser/.cache/huggingface
 
   # The Background Worker Service
@@ -22,20 +23,20 @@ services:
     build: .
     container_name: translator_worker
     environment:
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-    entrypoint: python worker.py 
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - SERVICE_TOKEN_SECRET=${SERVICE_TOKEN_SECRET}
+    entrypoint: ""
+    command: ["python", "app/worker/worker.py"]
     depends_on:
       - redis
     volumes:
-      - .:/app # Add this line to see code changes without rebuilding
       - huggingface-cache:/home/appuser/.cache/huggingface
 
   #the redis service
   redis:
     image: "redis:alpine"
     container_name: redis_cache
-    #persists redis data across container restarts
     volumes:
       - redis_data:/data
 

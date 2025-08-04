@@ -1,5 +1,5 @@
 import redis
-from translation_service.config import REDIS_HOST, REDIS_PORT
+from app.core.config import REDIS_HOST, REDIS_PORT
 
 # This creates the client object. The actual connection and verification
 # will happen in the main application's startup sequence.

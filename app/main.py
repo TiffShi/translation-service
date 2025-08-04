@@ -4,10 +4,8 @@ from threading import Thread
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
-from translation_service.config import REDIS_HOST, REDIS_PORT, LANGUAGE_CODES
-from services.translation import get_translation_pipeline, translation_worker
-from api.views import router as api_router
-from db import redis_client
+from app.api.endpoints import router as api_router
+from app.db.redis_client import redis_client
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -33,8 +31,8 @@ async def lifespan(app: FastAPI):
 # Create the main FastAPI application instance.
 app = FastAPI(
     title="Translation Microservice",
-    description="An API for high-performance text translation, consistent with the healthcare-app architecture.",
-    version="2.0.0",
+    description="An API for high-performance, lightweight text translation",
+    version="3.0.0",
     lifespan=lifespan
 )
 

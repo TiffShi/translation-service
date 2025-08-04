@@ -5,7 +5,7 @@ import logging
 from threading import Lock
 from transformers import pipeline
 
-from translation_service.config import (
+from app.core.config import (
     LANGUAGE_CODES, HELSINKI_NAME_TEMPLATE, BATCH_SIZE, BATCH_TIMEOUT,
     TRANSLATION_CACHE_PREFIX, RESULTS_CACHE_PREFIX, REQUEST_QUEUE_KEY
 )
@@ -102,8 +102,13 @@ def translation_worker(redis_client):
                 #create a list of just the texts to be translated
                 texts = [job['text'] for job in jobs]
 
+                start_time = time.time()
+
                 #pass the entire list to the pipeline for efficient, batched translation
                 translated_results = translator_pipeline(texts)
+
+                duration = time.time() - start_time
+                logger.info(f"Translated batch for {lang} ({len(jobs)} jobs) in {duration:.2f} seconds.")
 
                 #map the results back to their original jobs
                 for i, job in enumerate(jobs):

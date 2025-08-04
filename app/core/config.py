@@ -34,9 +34,13 @@ TRANSLATION_CACHE_PREFIX = "translation_cache:"
 BATCH_SIZE = 8
 #number of seconds the worker will wait for a new job before checking again
 BATCH_TIMEOUT = 1.0
+NUM_WORKER_THREADS = 3
 
 # --- Auth Configuration ---
 #URL for the central auth service, which must be provided by an environment variable
 AUTH_SERVICE_URL = os.environ.get("AUTH_SERVICE_URL")
 #secret token for secure communication between this service and other internal services
-SERVICE_TOKEN_SECRET = "db-service-secret-token"
+SERVICE_TOKEN_SECRET = os.environ.get("SERVICE_TOKEN_SECRET")
+
+if not SERVICE_TOKEN_SECRET:
+    raise ValueError("No SERVICE_TOKEN_SECRET set for the application.")
